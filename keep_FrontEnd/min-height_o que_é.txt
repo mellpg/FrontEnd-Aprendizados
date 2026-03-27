@@ -1,0 +1,27 @@
+A propriedade CSS min-height: 85vh; serve para garantir que um elemento tenha, no mínimo, 85% da altura da viewport (a área visível do navegador). 
+
+Aqui está uma explicação detalhada:
+O que significa cada parte?
+min-height: Define a altura mínima do elemento. O elemento pode ser mais alto se o conteúdo dentro dele for grande, mas não pode ser menor que o valor definido.
+85: O valor numérico.
+vh (Viewport Height): Unidade relativa à altura da área visível do navegador (viewport). 1vh equivale a 1% da altura da tela.
+85vh = 85% da altura da janela do navegador. 
+
+Para que serve? (Casos de uso)
+Layouts Responsivos: Garantir que uma seção (hero, banner, container) ocupe quase a tela inteira, independentemente de ser um celular ou um monitor desktop, sem quebrar o layout.
+Conteúdo Pequeno: Se você tiver pouco texto em uma div, o min-height impede que a seção fique "achatada". Ele mantém o espaço preenchido.
+Conteúdo Grande: Se o conteúdo for maior que 85vh, o elemento crescerá automaticamente para comportar todo o conteúdo, evitando que ele transborde (overflow) para fora do container. 
+
+ 
+Diferença entre min-height: 85vh e height: 85vh
+min-height: 85vh: A altura é pelo menos 85vh. Ela aumenta se necessário.
+height: 85vh: A altura é fixa em 85vh. O conteúdo pode transbordar se for muito grande. 
+
+
+Exemplo Prático
+css
+.container {
+    min-height: 85vh; /* Seção com mínimo de 85% da tela */
+    background-color: lightblue;
+}
+Se a tela tem 1000px de altura, o elemento terá pelo menos 850px de altura.

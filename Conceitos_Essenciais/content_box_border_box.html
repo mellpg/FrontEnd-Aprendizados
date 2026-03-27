@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Prática: O Box Model do CSS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        .exemplo-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        /* ESTA É A CLASSE BASE */
+        .base-caixa {
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            border: 10px solid #2c3e50;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* 1. CONTENT-BOX DECLARADO */
+        .caixa-content {
+            box-sizing: content-box;
+            background-color: #e74c3c;
+            /* Vermelho */
+        }
+
+        /* 2. BORDER-BOX DECLARADO */
+        .caixa-border {
+            box-sizing: border-box;
+            background-color: #3498db;
+            /* Azul */
+        }
+
+        /* 3. CAIXA PURA (SEM BOX-SIZING)
+           Como não definimos nada, o navegador usa o padrão: content-box.
+           Ela vai "ignorar" os 300px e crescer com o padding e a borda.
+        */
+        .caixa-pura {
+            /* Repare: NÃO existe a linha box-sizing aqui! */
+            background-color: #8e44ad;
+            /* Roxo */
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Comparativo de Box Model</h1>
+
+    <div class="exemplo-container">
+        <div>
+            <span class="label">1. Definido como content-box</span>
+            <div class="base-caixa caixa-content">
+                SOMA TUDO <br> (360px total)
+            </div>
+        </div>
+
+        <div>
+            <span class="label">2. Definido como border-box</span>
+            <div class="base-caixa caixa-border">
+                MANTÉM O TAMANHO <br> (300px total)
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2 style="text-align: center; margin-top: 30px;">A Prova Real: O Padrão do Navegador</h2>
+    <div class="exemplo-container">
+
+        <div>
+            <span class="label">3. Caixa "Pura" (Sem box-sizing no código)</span>
+            <div class="base-caixa caixa-pura">
+                SOU PADRÃO <br>
+                Fiquei igual à vermelha!
+            </div>
+            <p><small>Isso prova que o padrão do <br> CSS é o <b>content-box</b>.</small></p>
+        </div>
+
+        <div>
+            <span class="label">4. Border-box para comparar</span>
+            <div class="base-caixa caixa-border">
+                SOU O AJUSTADO <br>
+                Continuo menor e correto.
+            </div>
+            <p><small>Mesmo 300px de width, <br> mas visualmente diferente.</small></p>
+        </div>
+
+    </div>
+
+    <div
+        style="max-width: 600px; margin: 40px auto; background: white; padding: 20px; border-radius: 10px; border-left: 5px solid #8e44ad;">
+        <h3>💡 Conclusão do Experimento:</h3>
+        <p>Ao olhar para a <b>caixa roxa</b> e a <b>caixa vermelha</b>, você verá que elas têm o mesmo tamanho. Isso
+            acontece porque, se você não escrever nada, o navegador assume que você quer o <code>content-box</code>.</p>
+        <p><b>Por que isso é ruim?</b> Porque você definiu 300px, mas ganhou 360px. Isso quebra layouts complexos!</p>
+    </div>
+
+</body>
+
+</html>

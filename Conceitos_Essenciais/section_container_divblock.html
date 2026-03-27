@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Estrutura HTML</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 1. SECTION: Define uma área temática na página */
+        .minha-section,
+        .lista-section,
+        .form-section {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+            /* Espaçamento em cima e embaixo */
+        }
+
+        /* 2. CONTAINER: Centraliza o conteúdo e limita a largura */
+        .container,
+        .container-lista,
+        .container-form {
+            max-width: 1200px;
+            /* Limita a largura máxima */
+            margin: 0 auto;
+            /* Centraliza na tela */
+            padding: 0 20px;
+            /* Padding lateral para telas pequenas */
+            background-color: #fff;
+            border: 2px solid #333;
+        }
+
+        /* 3. DIV BLOCK: Um bloco de conteúdo estilizado */
+        .div-block {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- A Section envolve toda a área de destaque -->
+    <section class="minha-section">
+
+        <!-- O Container centraliza o conteúdo -->
+        <div class="container">
+
+            <h1>Título da Seção</h1>
+            <p>Este texto está dentro do container.</p>
+
+            <!-- Div Block é um elemento de bloco dentro do container -->
+            <div class="div-block">
+                <h3>Sou um Div Block</h3>
+                <p>Estilizado com fundo azul e bordas arredondadas.</p>
+                <p>Eu me expando horizontalmente o máximo possível </p>
+            </div>
+
+        </div>
+    </section>
+    <section class="lista-section">
+        <div class="container-lista">
+            <h1>Título da Lista</h1>
+            <ul>
+                <li>Item</li>
+            </ul>
+
+            <ol>
+                <li>Item</li>
+            </ol>
+            <!-- Div Block é um elemento de bloco dentro do container -->
+            <div class="div-block">
+                <h3>Sou um Div Block</h3>
+                <p>Estilizado com fundo azul e bordas arredondadas.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="form-section">
+        <div class="container-form">
+            <h1>Título secão form</h1>
+            <form>
+                <input type="text">
+                <button>Enviar</button>
+            </form>
+            <!-- Div Block é um elemento de bloco dentro do container -->
+            <div class="div-block">
+                <h3>Sou um Div Block</h3>
+                <p>Estilizado com fundo azul e bordas arredondadas.</p>
+            </div>
+        </div>
+    </section>
+    <sectiom class="tabela-section">
+        <div class="container-tabela">
+            <h1>Título secção tabela</h1>
+            <table>
+                <tr>
+                    <td>Dado</td>
+                </tr>
+            </table>
+            <!-- Div Block é um elemento de bloco dentro do container -->
+            <div class="div-block">
+                <h3>Sou um Div Block</h3>
+                <p>Estilizado com fundo azul e bordas arredondadas.</p>
+            </div>
+        </div>
+    </sectiom>
+
+</body>
+
+</html>

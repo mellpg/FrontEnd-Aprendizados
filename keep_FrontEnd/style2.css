@@ -1,0 +1,130 @@
+/* 1. CONFIGURAÇÕES GERAIS E RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Impede que o padding aumente o tamanho da div */
+    font-family: 'Arial', sans-serif;
+}
+
+/* 2. O PAI FIXO (Segura as duas barras no topo) */
+.header-container {
+    position: fixed;
+    /* Fixa na tela */
+    top: 0;
+    /* Cola no topo */
+    left: 0;
+    width: 100%;
+    /* Ocupa toda a largura horizontal */
+    z-index: 1000;
+    /* Garante que fique na frente de tudo */
+}
+
+/* 3. RETÂNGULO SUPERIOR (TOP BAR) - Geralmente mais fino e escuro */
+.top-info-bar {
+    background-color: #1a1a1a;
+    /* Cor do fundo do retângulo superior */
+    color: #ffffff;
+    /* Cor do texto */
+    padding: 10px 0;
+    /* Espaçamento interno em cima e embaixo */
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+    /* Uma linha sutil para separar */
+}
+
+/* 4. RETÂNGULO DO MENU (NAVBAR) - O retângulo principal com cor */
+.menu-fixo-colorido {
+    background-color: #2c3e50;
+    /* A cor principal do seu retângulo menu */
+    padding: 15px 0;
+    /* Altura do menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar profundidade */
+}
+
+/* 5. LIMITADOR DE LARGURA (Para o conteúdo não encostar nas bordas da tela) */
+.limite-largura {
+    max-width: 1200px;
+    /* O conteúdo do menu não passa de 1200px */
+    margin: 0 auto;
+    /* Centraliza o conteúdo no meio da tela */
+    padding: 0 20px;
+    display: flex;
+    /* Ativa o modo flexível para colocar itens lado a lado */
+    justify-content: space-between;
+    /* Manda a logo pra esquerda e o menu pra direita */
+    align-items: center;
+    /* Alinha tudo verticalmente no meio */
+}
+
+/* 6. ESTILO DOS LINKS E LOGO */
+.logo h2 {
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #3498db;
+    /* Cor de destaque na logo */
+}
+
+.nav-links {
+    list-style: none;
+    /* Tira as bolinhas da lista */
+    display: flex;
+    /* Coloca os itens da lista em linha */
+    gap: 25px;
+    /* Espaço entre cada link do menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Tira o sublinhado dos links */
+    color: #ecf0f1;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+    /* Suaviza a troca de cor no hover */
+}
+
+.nav-links a:hover {
+    color: #3498db;
+    /* Cor quando passa o mouse */
+}
+
+/* 7. BOTÃO DE DESTAQUE DENTRO DO MENU */
+.botao-destaque {
+    background-color: #e74c3c;
+    /* Vermelho para chamar atenção */
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white !important;
+    /* Força a cor branca */
+}
+
+/* 8. AJUSTE DO CONTEÚDO (MAIN) */
+.conteudo-principal {
+    /* Como o menu é fixo, ele "flutua". Precisamos empurrar o site para baixo 
+       para o início do conteúdo não ficar escondido atrás do menu. */
+    margin-top: 120px;
+}
+
+.banner {
+    height: 400px;
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 9. RODA PÉ (FOOTER) */
+.rodape-profissional {
+    background-color: #1a1a1a;
+    color: #888;
+    padding: 40px 0;
+    text-align: center;
+}

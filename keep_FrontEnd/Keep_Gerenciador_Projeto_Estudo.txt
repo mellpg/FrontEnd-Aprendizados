@@ -1,0 +1,93 @@
+// Recupera tarefas do localStorage ou inicia vazio
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+
+const listaTarefas = document.getElementById("listaTarefas");
+const inputTarefa = document.getElementById("novaTarefa");
+
+// Função para criar o HTML da tarefa
+function renderizarTarefas() {
+    listaTarefas.innerHTML = ""; // limpa a lista
+
+    tarefas.forEach((tarefa, index) => {
+        const divTarefa = document.createElement("div");
+        divTarefa.classList.add("tarefa");
+        divTarefa.classList.add(tarefa.status); // adiciona pendente/feito/cancelado
+
+        divTarefa.innerHTML = `
+            <span>${tarefa.texto}</span>
+            <button onclick="marcarFeito(${index})">Feito</button>
+            <button onclick="cancelarTarefa(${index})">Cancelar</button>
+        `;
+
+        listaTarefas.appendChild(divTarefa);
+    });
+}
+
+// Adicionar nova tarefa
+function adicionarTarefa() {
+    const texto = inputTarefa.value.trim();
+    if (texto === "") return;
+
+    tarefas.push({ texto, status: "pendente" });
+    salvarTarefas();
+    renderizarTarefas();
+    inputTarefa.value = "";
+}
+
+// Marcar como feito
+function marcarFeito(index) {
+    tarefas[index].status = "feito";
+    salvarTarefas();
+    renderizarTarefas();
+}
+
+// Cancelar tarefa
+function cancelarTarefa(index) {
+    tarefas[index].status = "cancelado";
+    salvarTarefas();
+    renderizarTarefas();
+}
+
+// Salvar no localStorage
+function salvarTarefas() {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
+
+// Inicializa a lista na tela
+renderizarTarefas(); 
+
+
+Ideias de melhorias para praticar
+
+Apagar tarefa
+
+Adicione um botão “Apagar” que remove a tarefa do array e salva.
+
+Editar tarefa
+
+Permita alterar o texto da tarefa clicando nela ou em um botão “Editar”.
+
+Ordenar tarefas
+
+Exibir primeiro as pendentes, depois feitas, depois canceladas.
+
+Cores diferentes para cada status
+
+Use CSS para .pendente, .feito, .cancelado com background-color:
+
+.pendente { background-color: #d4edda; } /* verde claro */
+.feito { background-color: #008000; }    /* verde normal */
+.cancelado { background-color: #ff0000; } /* vermelho */
+
+
+Marcar/desmarcar feito
+
+Alterne entre “feito” e “pendente” ao clicar, em vez de apenas marcar.
+
+Persistência com data
+
+Salvar a data de criação e mostrar na tarefa.
+
+Contador
+
+Mostrar quantas tarefas estão pendentes, feitas e cancelada

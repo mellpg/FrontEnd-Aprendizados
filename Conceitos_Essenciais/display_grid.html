@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Básico de Grid</title>
+    <style>
+        /* RESET PADRÃO */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* CONTAINER PAI (O GRID) */
+        .grid-pai {
+            display: grid;
+            /* Ativa o sistema de Grid */
+
+            /* Define 3 colunas. O '1fr' significa "1 fração" (divide o espaço igualmente) */
+            grid-template-columns: 1fr 1fr 1fr;
+
+            /* Define a altura das linhas (opcional, o grid pode ser automático) */
+            grid-template-rows: 100px 100px;
+
+            /* Espaçamento entre os itens (sarjeta), não vai somar margem extras, como margens da borda, etc. */
+            grid-gap: 10px;
+
+            border: solid 20px black;
+
+            background-color: #ddd;
+            padding: 10px;
+            margin-top: 30px;
+            /* Não existe margin-top: 30px auto; -> São dois valores
+            /* Define o espaço no topo */
+            margin-left: auto;
+            /* Centraliza na esquerda */
+            margin-right: auto;
+            /* Centraliza na direita */
+            gap: 10px;
+
+
+        }
+
+        /* ESTILO DOS ITENS FILHOS */
+        .item {
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            /* Flex aqui serve apenas para centralizar o texto */
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2980b9;
+        }
+
+        /* EXEMPLO DE ITEM QUE OCUPA MAIS ESPAÇO */
+        .item-largo {
+            /* Span: Faz este item ocupar o espaço de 2 colunas */
+            grid-column: span 2;
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grid são como grades, xadrez</h1>
+    <br>
+    <h2>Layout em Grid (3 Colunas)</h2>
+
+    <div class="grid-pai">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item item-largo">4 (Ocupo 2 espaços)</div>
+        <div class="item">5</div>
+    </div>
+
+</body>
+
+</html>

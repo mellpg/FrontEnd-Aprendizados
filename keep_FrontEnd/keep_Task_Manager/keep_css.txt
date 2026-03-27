@@ -1,0 +1,700 @@
+/* Importa duas fontes do Google Fonts:
+   Orbitron (visual tecnológico) e Inter (mais neutra) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+
+/* Estilo geral aplicado ao corpo da página */
+body {
+
+    /* Cor de fundo da página (cinza bem escuro) */
+    background: #111;
+
+    /* Cor padrão dos textos */
+    color: white;
+
+    /* Deixa o texto em negrito */
+    font-weight: bold;
+
+    /* Sombra no texto para melhorar contraste */
+    text-shadow: 2px 2px 4px black;
+
+    /* Configurações para imagens de fundo caso existam */
+    background-size: cover; /* imagem ocupa toda a tela */
+    background-repeat: no-repeat; /* não repete a imagem */
+    background-position: center; /* centraliza a imagem */
+    background-attachment: fixed; /* imagem não se move ao rolar */
+
+    /* Altura mínima da página igual à altura da tela */
+    min-height: 100vh;
+
+    /* Remove margem padrão do navegador */
+    margin: 0;
+
+    /* Ativa Flexbox no body */
+    display: flex;
+
+    /* Organiza os elementos verticalmente */
+    flex-direction: column;
+}
+
+
+/* Estilo geral das seções da página */
+section {
+
+    /* Faz a seção ocupar o espaço restante disponível */
+    flex: 1;
+
+    /* Cria espaço no topo para compensar a navbar fixa */
+    padding-top: 80px;
+}
+
+
+/* Estilo padrão de parágrafos */
+p {
+
+    /* Cor azul clara */
+    color: aliceblue;
+}
+
+
+
+
+/* Barra de navegação superior */
+.navbar {
+
+    /* Fundo preto */
+    background-color: black;
+
+    /* Ocupa toda largura da tela */
+    width: 100%;
+
+    /* Altura fixa da barra */
+    height: 60px;
+
+    /* Mantém a barra fixa no topo */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Flexbox para alinhar elementos internos */
+    display: flex;
+
+    /* Centraliza verticalmente */
+    align-items: center;
+
+    /* Coloca elementos nas extremidades */
+    justify-content: space-between;
+
+    /* Espaçamento interno lateral */
+    padding: 0 30px;
+
+    /* Garante que padding não altere largura total */
+    box-sizing: border-box;
+}
+
+
+/* Container da logo */
+.logo {
+
+    /* Flexbox para alinhar elementos */
+    display: flex;
+
+    /* Centraliza verticalmente */
+    align-items: center;
+}
+
+
+/* Imagem da logo */
+.logo img {
+
+    width: auto; /* largura automática proporcional */
+    height: 45px; /* altura fixa */
+
+    /* deixa a imagem circular */
+    border-radius: 50%;
+
+    /* garante que imagem não distorça */
+    object-fit: cover;
+}
+
+
+/* Container do menu */
+.menu {
+
+    /* Organiza itens em linha */
+    display: flex;
+
+    /* Espaço entre os links */
+    gap: 25px;
+}
+
+
+/* Links do menu */
+.menu a {
+
+    font-family: 'Orbitron', sans-serif; /* fonte futurista */
+
+    font-size: 14px;
+
+    /* espaço entre letras */
+    letter-spacing: 1px;
+
+    /* cor cinza claro */
+    color: #e0e0e0;
+
+    /* remove sublinhado padrão */
+    text-decoration: none;
+
+    padding: 8px 0;
+
+    /* permite efeitos posicionados */
+    position: relative;
+
+    /* animação suave */
+    transition: all 0.3s;
+}
+
+
+/* Efeito ao passar o mouse */
+.menu a:hover {
+
+    /* muda para azul neon */
+    color: #00f2ff;
+
+    /* cria brilho no texto */
+    text-shadow: 0 0 8px #00f2ff;
+}
+
+
+
+
+/* Centraliza títulos h1 e h2 */
+h1,
+h2 {
+
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/* Configuração geral para títulos */
+h1,
+h2,
+h3 {
+
+    /* transforma texto em maiúsculas */
+    text-transform: uppercase;
+
+    /* espaço entre letras */
+    letter-spacing: 3px;
+
+    /* deixa em negrito */
+    font-weight: bold;
+
+    /* sombra no texto */
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* Estilo específico do h1 */
+h1 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    letter-spacing: 2px;
+
+    /* cor cinza claro */
+    color: #e0e0e0;
+
+    /* glow suave */
+    text-shadow: 0 0 3px #00f2ff50;
+
+    background: none;
+
+    /* remove animações antigas */
+    animation: none;
+}
+
+
+/* Efeito hover no h1 */
+h1:hover {
+
+    color: #00f2ff;
+
+    text-shadow: 0 0 8px #00f2ff;
+}
+
+
+/* h2 branco */
+h2 {
+    color: white;
+}
+
+
+
+
+/* Remove decoração de vários links */
+ul li,
+.contatos li,
+.contatos li a,
+h1 a {
+
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Efeito hover nos links */
+ul li a:hover,
+.contatos li a:hover {
+
+    color: #00bcd4;
+}
+
+
+
+
+/* Lista de contatos */
+.contatos {
+
+    /* remove marcador da lista */
+    list-style: none;
+
+    padding: 0;
+
+    /* centraliza horizontalmente */
+    margin: 0 auto;
+
+    /* usa flexbox */
+    display: flex;
+
+    /* organiza verticalmente */
+    flex-direction: column;
+
+    align-items: center;
+
+    /* espaço entre itens */
+    gap: 15px;
+}
+
+
+/* Cada item da lista */
+.contatos li {
+
+    text-align: center;
+}
+
+
+/* Links dentro da lista */
+.contatos li a {
+
+    display: flex;
+
+    /* centraliza ícone e texto */
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* Ícones de contato */
+.icon {
+
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+/* Rodapé */
+.footer {
+
+    background-color: black;
+
+    /* linha separadora */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #888;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 0.9rem;
+}
+
+
+
+
+/* Animação suave para links e botões */
+a,
+button,
+.clicavel {
+
+    transition: transform 0.2s ease-in-out, opacity 0.2s;
+}
+
+
+/* Efeito ao clicar */
+a:active,
+button:active,
+.clicavel:active {
+
+    /* diminui levemente */
+    transform: scale(0.95);
+
+    /* reduz opacidade */
+    opacity: 0.8;
+}
+
+
+/* Botões gerais */
+button {
+
+    margin-left: 5px;
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* Classe genérica de botão */
+.btn {
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    font-family: 'Orbitron', sans-serif;
+
+    transition: all 0.3s;
+}
+
+
+/* Hover do botão */
+.btn:hover {
+
+    background-color: red;
+}
+
+
+
+
+/* Botão voltar fixo na tela */
+.btn-voltar {
+
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-family: 'Orbitron', sans-serif;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s;
+
+    /* garante que fique acima de outros elementos */
+    z-index: 1000;
+}
+
+
+/* Hover do botão voltar */
+.btn-voltar:hover {
+
+    background-color: #00f2ff;
+
+    color: black;
+
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+
+
+
+/* Classe para animação de entrada */
+.fade-slide-in {
+
+    opacity: 0; /* começa invisível */
+
+    transform: translateY(20px); /* começa deslocado */
+
+    animation: fadeSlideIn 1s forwards;
+}
+
+
+/* Definição da animação */
+@keyframes fadeSlideIn {
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Seção "sobre mim" */
+#sobre-mim {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 120px 20px 40px;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+
+/* Título da seção */
+#sobre-mim h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+
+    color: whitesmoke;
+
+    text-shadow: 0 0 5px #00f2ff50;
+}
+
+
+/* Card da seção sobre */
+.card-sobre {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 50px 40px;
+
+    background-color: #0a0a0a;
+
+    border: 1px solid #00f2ff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px #00f2ff30;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+
+.card-sobre h2 {
+
+    margin-bottom: 25px;
+}
+
+
+.card-sobre p {
+
+    margin: 15px 0;
+}
+
+
+
+
+/* Container do gerenciador de tarefas */
+#gerenciador {
+
+    max-width: 700px;
+
+    margin: 120px auto 40px auto;
+
+    padding: 40px;
+
+    background-color: #0a0a0a;
+
+    border: 1px solid #00f2ff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px #00f2ff30;
+
+    text-align: center;
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* Campo de input da tarefa */
+#novaTarefa {
+
+    width: 60%;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    border: 1px solid #00f2ff;
+
+    background-color: #111;
+
+    color: white;
+}
+
+
+/* Botões dentro do gerenciador */
+#gerenciador button {
+
+    padding: 12px 16px;
+
+    border-radius: 6px;
+
+    border: none;
+
+    background-color: black;
+
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* Hover desses botões */
+#gerenciador button:hover {
+
+    box-shadow: 0 0 10px #00f2ff;
+}
+
+
+/* Lista de tarefas */
+#listaTarefas {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+
+
+/* Estilo de cada tarefa */
+.tarefa {
+
+    background-color: #111;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    padding: 10px;
+
+    margin: 5px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Tarefa concluída */
+.tarefa.feito {
+
+    background-color: green;
+}
+
+
+/* Texto riscado quando concluída */
+.tarefa.feito span {
+
+    text-decoration: line-through;
+}
+
+
+/* Tarefa cancelada */
+.tarefa.cancelado {
+
+    background-color: red;
+}
+
+
+
+
+/* Container do botão apagar */
+#apagar {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+}
+
+
+/* Botão apagar tarefas */
+#apagar button {
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    font-family: 'Orbitron', sans-serif;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s;
+}
+
+
+/* Hover do botão apagar */
+#apagar button:hover {
+
+    background-color: red;
+
+    color: black;
+
+    box-shadow: 0 0 15px red;
+}

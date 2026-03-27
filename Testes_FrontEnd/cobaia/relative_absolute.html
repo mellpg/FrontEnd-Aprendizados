@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relative vs Absolute (simples)</title>
+
+    <style>
+        /* Caixa pai */
+        .container {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+
+            /* Define a referência para elementos absolute */
+            position: relative;
+        }
+
+        /* Caixa com POSITION RELATIVE */
+        .relative {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+
+            /* Continua ocupando seu espaço normal */
+            position: relative;
+
+            /* Move 20px da posição ORIGINAL */
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Caixa com POSITION ABSOLUTE */
+        .absolute {
+            width: 100px;
+            height: 100px;
+            background: salmon;
+
+            /* Sai do fluxo normal da página */
+            position: absolute;
+
+            /* Agora se posiciona em relação ao .container */
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Relative: move a partir da posição original -->
+        <div class="relative">relative</div>
+
+        <!-- Absolute: fica preso ao canto do container -->
+        <div class="absolute">absolute</div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<!--
+POSITION EM CSS
+
+A propriedade "position" controla como um elemento é posicionado na página.
+
+Por padrão, todos os elementos seguem o fluxo normal do documento.
+Ou seja, aparecem um abaixo do outro e ocupam espaço naturalmente.
+
+Quando usamos "position", mudamos a forma como o navegador calcula
+a posição do elemento.
+
+------------------------------------------------------------
+
+POSITION: RELATIVE
+
+O elemento continua no fluxo normal da página.
+
+Isso significa:
+- Ele ainda ocupa seu espaço no layout
+- Outros elementos continuam respeitando esse espaço
+
+Mas ele pode ser deslocado visualmente usando:
+
+top
+left
+right
+bottom
+
+Esse deslocamento acontece em relação à posição original do elemento.
+
+Exemplo mental:
+
+posição original:
+[ caixa ]
+
+depois de mover:
+        [ caixa ]
+
+O espaço original continua reservado.
+
+Usos mais comuns de relative:
+
+1) Pequenos ajustes de posição
+Exemplo: alinhar um ícone com um texto.
+
+2) Criar uma referência para elementos com position:absolute.
+Isso é extremamente comum em layouts.
+
+------------------------------------------------------------
+
+POSITION: ABSOLUTE
+
+O elemento sai completamente do fluxo normal da página.
+
+Isso significa:
+- Ele não ocupa mais espaço no layout
+- Outros elementos se comportam como se ele não existisse
+
+Ele é posicionado usando:
+
+top
+left
+right
+bottom
+
+Mas diferente do relative, ele precisa de uma referência.
+
+A referência será:
+
+1) O elemento pai que tenha position definida
+(relative, absolute, fixed, etc)
+
+2) Se não existir, ele usa o body da página.
+
+------------------------------------------------------------
+
+PADRÃO MUITO COMUM EM CSS
+
+.container{
+    position: relative;
+}
+
+.elemento{
+    position: absolute;
+}
+
+Por quê?
+
+Porque o absolute precisa de um ponto de referência,
+e o container com relative se torna essa referência.
+
+------------------------------------------------------------
+
+EXEMPLOS REAIS DE USO
+
+position: relative
+- pequenos ajustes de posição
+- criar referência para absolute
+- containers de componentes
+
+position: absolute
+- ícones sobre imagens
+- badges de notificação
+- botões sobre imagens
+- menus dropdown
+- tooltips
+- elementos sobrepostos
+
+------------------------------------------------------------
+
+REGRA PRÁTICA
+
+relative = continua no layout
+absolute = flutua livremente
+
+ou
+
+relative = referência
+absolute = posicionamento preciso
+-->
+
+<!--
+QUANDO USAR position: relative
+
+Use quando o elemento deve continuar no layout normal da página,
+mas você precisa fazer pequenos ajustes de posição ou criar uma
+referência para elementos com position:absolute.
+
+EXEMPLO 1 — Ajustar levemente um elemento
+
+.titulo{
+    position: relative;
+    top: 5px;
+}
+
+Situação:
+O título precisa descer um pouco para alinhar melhor com outro elemento.
+
+------------------------------------------------------------
+
+EXEMPLO 2 — Criar referência para um elemento absolute
+
+.card{
+    position: relative;
+}
+
+.badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+Situação:
+Um "badge" de notificação precisa ficar no canto do card.
+
+Visual:
+
+[ Produto        NOVO ]
+
+------------------------------------------------------------
+
+EXEMPLO 3 — Container de componentes
+
+.profile-card{
+    position: relative;
+}
+
+Situação:
+Elementos internos (ícones, botões, notificações) podem ser posicionados
+com absolute dentro desse container.
+
+------------------------------------------------------------
+
+
+QUANDO USAR position: absolute
+
+Use quando você precisa posicionar um elemento em um ponto específico
+sem que ele afete o layout dos outros elementos.
+
+Ele sai do fluxo normal da página.
+
+------------------------------------------------------------
+
+EXEMPLO 1 — Ícone de notificação
+
+.avatar{
+    position: relative;
+}
+
+.notificacao{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+Situação:
+Colocar um indicador de notificação sobre a foto de perfil.
+
+Visual:
+
+[ foto ]
+      🔴
+
+------------------------------------------------------------
+
+EXEMPLO 2 — Botão sobre uma imagem
+
+.imagem{
+    position: relative;
+}
+
+.botao{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+Situação:
+Colocar um botão no canto da imagem.
+
+Visual:
+
+[ imagem grande ]
+
+            [ botão ]
+
+------------------------------------------------------------
+
+EXEMPLO 3 — Menu dropdown
+
+.menu{
+    position: relative;
+}
+
+.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+Situação:
+O menu aparece logo abaixo do botão.
+
+------------------------------------------------------------
+
+RESUMO RÁPIDO
+
+position: relative
+- pequenos ajustes de posição
+- criar referência para absolute
+- containers de componentes
+
+position: absolute
+- ícones sobre elementos
+- botões sobre imagens
+- notificações
+- menus dropdown
+- elementos sobrepostos
+-->

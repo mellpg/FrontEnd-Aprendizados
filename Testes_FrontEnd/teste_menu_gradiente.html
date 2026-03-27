@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu com Hover Gradiente Explicação</title>
+    <style>
+        /* RESET E POSICIONAMENTO 
+           Este bloco apenas centraliza o menu na tela para visualização.
+        */
+        body {
+            margin: 0;
+            /* Remove margens padrão do navegador */
+            display: flex;
+            /* Ativa o Flexbox no corpo da página */
+            justify-content: center;
+            /* Centraliza o menu horizontalmente */
+            align-items: center;
+            /* Centraliza o menu verticalmente */
+            height: 100vh;
+            /* Faz o corpo ter a altura total da tela */
+            background-color: #f4f4f9;
+            /* Cor de fundo cinza bem clarinho */
+        }
+
+        /* O CONTAINER DO MENU 
+           Estiliza a lista <ul> que segura os links.
+        */
+        .menu {
+            display: flex;
+            /* Coloca os itens (li) um ao lado do outro */
+            list-style: none;
+            /* Tira as bolinhas/pontos da lista */
+            gap: 20px;
+            /* Cria um espaço de 20px entre cada botão */
+            padding: 0;
+            /* Garante que não haja recuo interno na lista */
+        }
+
+        /* OS LINKS (BOTÕES) 
+           Aqui é onde a mágica visual acontece.
+        */
+        .menu a {
+            text-decoration: none;
+            /* Remove o sublinhado azul padrão de links */
+            padding: 10px 20px;
+            /* Cria enchimento: 10px em cima/baixo, 20px nos lados */
+            font-family: sans-serif;
+            /* Usa uma fonte sem serifa (mais moderna) */
+            font-weight: bold;
+            /* Deixa o texto em negrito */
+            border-radius: 8px;
+            /* Arredonda as quinas do botão */
+            color: white;
+            /* Define a cor do texto como branco */
+
+            /* GRADIENTE DINÂMICO:
+               Criamos um gradiente que vai da Cor A -> Cor B -> Volta para Cor A.
+            */
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);
+
+            /* O TRUQUE DO TAMANHO:
+               Dizemos que o fundo tem 200% da largura do botão. 
+               Como o botão é menor que o fundo, parte do gradiente fica "escondida".
+            */
+            background-size: 200% auto;
+
+            /* Começamos exibindo o lado direito (final) do gradiente */
+            background-position: right center;
+
+            /* TRANSIÇÃO:
+               Diz que qualquer mudança (de posição ou movimento) deve levar 
+               0.5 segundos para acontecer, criando o efeito suave.
+            */
+            transition: 0.5s;
+        }
+
+        /* EFEITO AO PASSAR O MOUSE (HOVER) 
+        */
+        .menu a:hover {
+            /* Move o fundo para a esquerda. Isso faz com que a primeira metade 
+               do gradiente deslize para dentro do botão.
+            */
+            background-position: left center;
+
+            /* Faz o botão "pular" 3 pixels para cima */
+            transform: translateY(-3px);
+
+            /* Adiciona uma sombra suave quando o botão sobe, dando profundidade */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+A propriedade max-width no CSS define a largura máxima que um elemento pode ter. Ela serve para garantir que elementos (como cards, textos ou imagens) não fiquem largos demais em telas grandes (monitores, TVs), ao mesmo tempo que permite que eles diminuam de tamanho em telas menores (smartphones, tablets). 
+MDN Web Docs
+MDN Web Docs
+ +3
+Como funciona no seu código:
+css
+width: 90%;       /* O card tenta ocupar 90% da largura da tela */
+max-width: 800px; /* Mas ele nunca passará de 800px */
+Em telas pequenas (ex: 375px): 90% da tela é menor que 800px. O card ocupa 90% da tela.
+Em telas grandes (ex: 1920px): 90% da tela é muito maior que 800px (1728px). O max-width entra em ação, "prendendo" o card em 800px para evitar que o texto fique muito esticado e ruim de ler. 
+DIO
+DIO
+ +2
+Para que serve (Principais benefícios)
+Responsividade: Essencial para layouts que se adaptam a qualquer tamanho de tela sem quebrar.
+Legibilidade: Evita que linhas de texto fiquem extremamente longas, o que cansa a leitura.
+Design Harmonioso: Mantém o conteúdo centralizado e organizado, mesmo em monitores ultrawide. 
+DIO
+DIO
+ +2
+Diferença entre width e max-width
+width (Fixo): Obriga o elemento a ter aquele tamanho. Se for maior que a tela, cria uma barra de rolagem horizontal.
+max-width (Flexível): Define um limite. O elemento pode ser menor que o valor, mas nunca maior.

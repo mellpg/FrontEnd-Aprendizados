@@ -1,0 +1,17 @@
+A instrução margin-bottom: 20px; no CSS é utilizada para criar um espaço em branco externo na parte inferior de um elemento (como um título <h1> a <h6>, parágrafo ou div). 
+W3Schools
+W3Schools
+ +2
+Aqui estão os detalhes do que isso faz:
+margin-bottom: Define a margem inferior (espaço exterior) de um elemento.
+20px: Define que esse espaço terá 20 pixels de tamanho.
+Finalidade: Como o comentário indica (/* Espaço abaixo do título */), ela serve para afastar os elementos que vêm logo depois (como um parágrafo de texto) do título, melhorando a legibilidade e o design do layout.
+Característica: É um espaçamento externo, ou seja, fica fora da borda do elemento. 
+YouTube
+YouTube
+ +4
+Exemplo prático:
+css
+h1 {
+  margin-bottom: 20px;
+}

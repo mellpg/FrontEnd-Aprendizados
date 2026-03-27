@@ -1,0 +1,594 @@
+como pegar todo esse estilo e colocar em um css?
+<!DOCTYPE html> <!--Declara o tipo de documento
+                    Sem isso, o navegador pode entrar em “modo de compatibilidade”.-->
+<html lang="pt-br"> <!--Indica idioma e envolve todo o conteúdo da página-->
+
+<head>
+    <!--Seção de configuração da página.
+    Nada aqui aparece visualmente no site.
+    Contém metadados e informações técnicas.-->
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Controla o comportamento em dispositivos móveis.
+    width=device-width → largura igual à largura da tela do dispositivo
+    initial-scale=1.0 → zoom inicial padrão-->
+    <title>Teste</title>
+    <style>
+        img {
+            transition: transform 0.3s ease;
+            /* Adiciona suavidade */
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        a {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        a:visited {
+            color: #ffd1d1;
+        }
+
+        a:hover {
+            background-color: red;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: yellow;
+        }
+
+        body {
+            background-color: black;
+            background-image: url("imagens/background_denji2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            color: red;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px 40px 20px 30px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #6F8FAF;
+        }
+
+        tfoot {
+            background-color: #6495ED;
+            font-weight: bold;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+            transition: 0.2s;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Centered Heading</h1>
+    <p style="text-align:center;">Centered paragraph.</p>
+    <h1 style="font-family:verdana;">This is a heading</h1>
+    <p style="font-family:courier;">This is a paragraph.</p>
+    <h1 style="font-size:300%;"></h1>
+    <p style="font-size:160%;"></p>
+    <!--Usando atributo style com propriedade do css-->
+    <h1 style="font-size:60px;">Travel Guide</h1>
+    <h2>Europe</h2>
+    <h3>France</h3>
+    <h3>Italy</h3>
+
+    <h2>Asia</h2>
+    <h3>India</h3>
+    <h3>Thailand</h3>
+    <h1>Isso é o cabeçalho da página</h1>
+    <h2>This is heading 2</h2>
+    <h3>This is heading 3</h3>
+    <h6>This is heading 4</h6>
+    <br>
+    <p>E isso é um parágrafo!</p>
+    <p title="John 'ShotGun' Nelson">
+        passe o mouse aqui
+    </p>
+    <a href="https://www.youtube.com/">Isso é um <strong>Link</strong></a>
+    <!--  O arquivo de origem ( src) -->
+    <!--  o texto alternativo ( alt), width, e height -->
+    <!--  São fornecidos como atributos -->
+    <!-- A <a>tag define um hiperlink. -->
+    <!-- O hrefatributo especifica o URL da página para a qual o link direciona: -->
+    <!-- 1. URL absoluta (externo)-->
+    <!-- 2. URL Relativa (hospedada)-->
+    <p style="color:red">Vermelho-sangue</p>
+    <p title="Chainsaw man" style="color: red;">
+        Chainsaw man.
+    </p>
+
+    <p><a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a></p>
+
+    <img src="imagens/denji.png" alt="Denji, personagem do anime Chainsaw Man" width="800" height="600">
+
+    <!-- <hr> é tag temática de quebra de linha horizontal-->
+    <h1> Regra número 1</h1>
+    <p>...</p>
+    <h1> Regra número 2</h1>
+    <p>...</p>
+    <!-- Use <br>se desejar uma quebra de linha (uma nova linha) sem iniciar um novo parágrafo:-->
+    <p>Preferências: <br>PÃO<br>GELEIA</p>
+    <!-- PROBLEMA DO POEMA E SOLUÇÃO-->
+    <!-- USAR O <PRE> (PRÉ-FORMATADO)-->
+    <pre>
+      My Bonnie lies over the ocean.
+    
+      My Bonnie lies over the sea.
+    
+      My Bonnie lies over the ocean.
+    
+      Oh, bring back my Bonnie to me.
+    </pre>
+    <hr>
+
+    <!-- TAGS DE ESTILO-->
+    <!-- O styleatributo HTML possui a seguinte sintaxe:-->
+    <!-- <tagname style="property:value;"> -->
+    <p>I am normal</p>
+    <p style="color:red;">I am red</p>
+    <p style="color:blue;">I am blue</p>
+    <p style="font-size:50px;">I am big</p>
+    <!-- A propriedade é uma propriedade CSS. O valor é um valor CSS.-->
+    <!-- 
+    <b>       - Texto em negrito
+    <strong>  - Texto importante (semântica de importância)
+    
+    <i>       - Texto em itálico
+    <em>      - Texto enfatizado (semântica de ênfase)
+    
+    <mark>    - Texto marcado / destacado
+    
+    <small>   - Texto menor (normalmente usado para observações)
+    
+    <del>     - Texto excluído / removido
+    
+    <ins>     - Texto inserido / adicionado posteriormente
+    
+    <sub>     - Texto em subscrito (ex: H₂O)
+    
+    <sup>     - Texto sobrescrito (ex: x²)
+    -->
+    <b>This text is bold</b>
+    <strong>This text is important!</strong>
+    <i>This text is italic</i>
+    <em>This text is emphasized</em>
+    <small>This is some smaller text.</small>
+    <p>Do not forget to buy <mark>milk</mark> today.</p>
+    <p>My favorite color is <del>blue</del> red.</p>
+    <p>This is <sub>subscripted</sub> text.</p>
+    <p>This is <sup>superscripted</sup> text.</p>
+    <h1>Formatting Text</h1>
+    <p>This is an important message.</p>
+    <p>Please read carefully.</p>
+    <p>Do not forget to buy milk today.</p>
+    <p>The chemical formula for water is: H2O</p>
+    <p>My favorite color is blue red.</p>
+
+    <!-- Elementos de referência e citação-->
+    <p>Como disse o professor: <q>Praticar todos os dias melhora a programação.</q></p>
+    <p>Segundo o autor:</p>
+
+    <blockquote>
+        A prática constante é uma das formas mais eficientes de aprender programação.
+        Com o tempo, os conceitos passam a fazer mais sentido.
+    </blockquote>
+    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+    <address>
+        Written by John Doe.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <p>The HTML cite element defines the title of a work.</p>
+    <p>Browsers usually display cite elements in italic.</p>
+
+    <img src="imagens/img_the_scream.jpg" width="220" height="277" alt="The Scream">
+    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+    <p>The HTML cite element defines the title of a work.</p>
+    <p>Browsers usually display cite elements in italic.</p>
+
+    <img src="imagens/img_the_scream.jpg" width="220" height="277" alt="The Scream">
+    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+    <p>Texto normal: HTML é fácil</p>
+
+    <p><bdo dir="rtl">HTML é fácil</bdo></p>
+
+    <!-- Atributo Target-->
+    <!-- Especifica onde abrir o documento vinculado -->
+    <h2>URL absoluta</h2>
+    <a href="https://www.w3schools.com/" target="_blank">Visitar W3Schools</a>
+
+    <h2>URL relativa</h2>
+    <p><a href="imagens/img_the_scream.jpg" target="_self">Abrir imagem</a></p>
+    <p><a href="imagens/img_the_scream.jpg" target="_parent">Abrir imagem</a></p>
+    <p><a href="imagens/img_the_scream.jpg" target="_top">Abrir imagem</a></p>
+    <!-- Imagem como link -->
+    <!--Caminho: <a href="default.asp"> -->
+    <h1>Imagem como link</h1>
+    <a href="https://www.google.com/?hl=pt_BR">
+        <img src="imagens/denji1.gif" alt="Gif 1" width="800" height="600" style="border:5px solid black;">
+        <img src="imagens/denji2.gif" alt="Gif 2" width="800" height="600" style="border:5px solid black;">
+        <img src="imagens/denji3.gif" alt="Gif 3" width="800" height="600" style="border:5px solid black;">
+    </a>
+    <h1>Botão como um link</h1>
+    <p>Com javascript claro ;3</p>
+    <p>O JavaScript permite especificar o que acontece em determinados eventos, como o clique de um botão:</p>
+    <button onclick="document.location='https://chainsaw-man.fandom.com/wiki/Denji/Image_Gallery'">
+        Clique aqui para mais imagens do Denji
+    </button>
+    <h1>Link para um endereço de email</h1>
+    <p>Utilize mailto:o hrefatributo para criar um link que abra o programa de e-mail do usuário (para que ele possa
+        enviar um
+        novo e-mail):</p>
+    <a href="mailto:melpg16@gmail.com">Send email</a>
+    <h1>Botão como link</h1>
+    <p>É necessário usar JavaScript</p>
+    <button onclick="document.location='https://mail.google.com/mail/u/0/#inbox'">Verificar caixa de entrada</button>
+    <p><a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a></p>
+    <h1>Marcador em HTML</h1>
+    <p><a href="#C4">Jump to Chapter 4</a></p>
+    <p><a href="#C10">Jump to Chapter 10</a></p>
+
+    <h2>Chapter 1</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 2</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 3</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C4">Chapter 4</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 5</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 6</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 7</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 8</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 9</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C10">Chapter 10</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 11</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 12</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 13</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 14</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 15</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 16</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 17</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 18</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 19</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 20</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 21</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 22</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 23</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h1>Mais tags de Imagens</h1>
+    <p>Ponto flutuante</p>
+    <p>Utilize a floatpropriedade CSS para permitir que a imagem flutue à direita ou à esquerda de um texto:</p>
+    <p><img src="imagens/denji4.gif" alt="Denji">
+        The image will float to the right of the text.</p>
+
+    <p><img src="imagens/denji4.gif" alt="Denji">
+        The image will float to the left of the text.</p>
+    <h1>Mapa de imagens HTML</h1>
+    <p>Ao clicar em algo redirecioa para outra área</p>
+    <br>
+    <h1>Tabelas</h1>
+    <table>
+        <caption>Pessoas</caption>
+        <tr>
+            <th>Person 1</th>
+            <th>Person 2</th>
+            <th>Person 3</th>
+        </tr>
+        <tr>
+            <td>Emil</td>
+            <td>Tobias</td>
+            <td>Linus</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>14</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <table>
+
+        <caption>Relatório de Vendas</caption>
+
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Notebook</td>
+                <td>5</td>
+                <td>R$ 3500</td>
+            </tr>
+
+            <tr>
+                <td>Mouse</td>
+                <td>20</td>
+                <td>R$ 80</td>
+            </tr>
+
+            <tr>
+                <td>Teclado</td>
+                <td>10</td>
+                <td>R$ 150</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">Total estimado</td>
+                <td>R$ 18.500</td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <table>
+
+        <caption>Horários da Semana</caption>
+
+        <colgroup>
+            <col style="background-color:#f2f2f2"> <!-- coluna dos horários -->
+            <col style="background-color:#f2f2f2">
+            <col style="background-color:#f2f2f2">
+            <col style="background-color:#f2f2f2">
+            <col style="background-color:#f2f2f2">
+            <col style="background-color:#f2f2f2">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>Horário</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <th>15:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>16:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>17:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>18:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>19:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>20:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>21:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="6">Planejamento semanal</td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <h1>Cabeçalhos de tabela vertical</h1>
+    <table>
+
+        <tr>
+            <th>Firstname</th>
+            <td>Jill</td>
+            <td>Eve</td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td>Smith</td>
+            <td>Jackson</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>94</td>
+            <td>50</td>
+        </tr>
+    </table>
+    <h1>Colspan</h1>
+    <table>
+
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>57</td>
+        </tr>
+
+    </table>
+    <h1>Rowspan</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Jill</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone</th>
+            <td>555-1234</td>
+        </tr>
+        <tr>
+            <td>555-8745</td>
+        </tr>
+    </table>
+    <h1>Tabela interativa</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Primeiro nome</th>
+                <th>Sobrenome</th>
+                <th>Poupança</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Swanson</td>
+                <td>$300</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Listas</h1>
+
+
+
+
+</body>
+
+</html>

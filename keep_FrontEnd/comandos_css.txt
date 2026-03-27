@@ -1,0 +1,87 @@
+Estrutura e Dimensões (Tamanho)
+width: 90%: Define que o retângulo ocupará quase toda a largura da tela em dispositivos menores (como celulares).
+
+max-width: 1000px: Impede que o retângulo fique largo demais em telas de computador muito grandes, travando-o em 1000 pixels.
+
+min-height: 500px: Garante que o retângulo seja alto, mesmo quando você ainda não adicionou nenhuma tarefa.
+
+📐 Espaçamento e Posicionamento
+padding: 60px: É a distância entre a borda do retângulo e o conteúdo dentro dele. Isso evita que o texto e o campo de digitação encostem nas "paredes" pretas.
+
+margin: 120px auto 40px auto:
+
+120px topo: Empurra o retângulo para baixo para ele não ficar escondido atrás da sua Navbar fixa.
+
+auto laterais: Faz o navegador calcular o espaço restante e dividir igualmente, centralizando o bloco na tela.
+
+40px baixo: Cria um espaço antes do final da página.
+
+🎨 Estética e Visual (Design Neon)
+background-color: #0a0a0a: Define a cor de fundo interna do retângulo (um cinza muito escuro).
+
+border: 1px solid #00f2ff: Cria a linha fina azul neon ao redor de todo o bloco.
+
+border-radius: 12px: Arredonda as quinas do retângulo, deixando o visual menos "rígido".
+
+box-shadow: 0 0 10px #00f2ff30: Adiciona um brilho azul suave por fora, reforçando o tema futurista.
+
+⚙️ Alinhamento Interno (Flexbox)
+display: flex: Transforma o retângulo em um "container flexível", permitindo alinhar o que está dentro com facilidade.
+
+flex-direction: column: Faz com que o título, o input e o botão fiquem um embaixo do outro, como uma lista.
+
+justify-content: flex-start: Garante que os itens comecem a ser alinhados a partir do topo do retângulo.
+
+text-align: center: Centraliza todos os textos que estiverem dentro desse bloco.
+
+
+Mudança de Comportamento (Ocupando seu lugar na fila)
+display: inline-block: Diferente do block (que ocupa a linha toda), o inline-block faz o elemento ter largura apenas o suficiente para o seu conteúdo, mas permite que você defina margens e alturas.
+
+position: relative: Remove o estado de "flutuar sobre a tela" (fixed). Agora o botão respeita os outros elementos. Ele se posiciona "relativamente" ao lugar onde ele deveria estar naturalmente no HTML.
+
+🎯 Centralização Estratégica
+width: fit-content: Esta é uma propriedade moderna e excelente. Ela diz ao navegador: "Ajuste a largura desta caixa exatamente ao tamanho do texto que está dentro dela". Nem mais, nem menos.
+
+margin: 40px auto: Como você mudou a posição, o auto nas laterais agora funciona para centralizar o botão horizontalmente. Os 40px garantem que ele não fique colado no retângulo de cima nem no que vier abaixo.
+
+align-self: center: Como o seu body no CSS anterior tem display: flex e flex-direction: column, o align-self é uma instrução específica para este botão dizer: "Eu quero me alinhar ao centro do meu pai (o body)".
+
+🎨 Visual e Estética (Estilo Gamer/Cyberpunk)
+background-color: rgba(0, 0, 0, 0.7): Um fundo preto com 70% de opacidade. Isso cria aquele efeito de transparência elegante, deixando transparecer um pouco do que está atrás.
+
+padding: 10px 15px: Espaço interno para o texto não sufocar dentro do botão.
+
+border-radius: 8px: Cantos levemente arredondados para um visual moderno.
+
+transition: all 0.3s: Faz com que qualquer mudança (como passar o mouse e mudar de cor) aconteça de forma suave em 0,3 segundos, em vez de um corte seco.
+
+🏗️ Camadas e Hierarquia
+z-index: 1000: Garante que o botão fique na "camada" de cima. Se algum outro elemento tentar passar por cima dele, o z-index alto o mantém visível.
+
+
+Mudança de Comportamento (Saída do "Modo Flutuante")
+position: relative;: Diferente do fixed, que prendia o botão em uma coordenada da tela, o relative faz com que ele respeite a ordem dos elementos no seu HTML. Ele agora "nasce" depois da seção de tarefas.
+
+display: inline-block;: Garante que o botão tenha apenas o tamanho necessário para o texto "Voltar à Página inicial", mas permitindo que você controle as margens e o alinhamento.
+
+🎯 Posicionamento com Flexbox
+align-self: flex-end;: Como o seu body é um container Flex em coluna (flex-direction: column), esta propriedade diz especificamente para este botão: "Ei, alinhe-se ao final da linha (à direita)". É o jeito mais limpo de jogar um item para a direita sem usar float.
+
+📏 Ajuste de Margens (O "Respiro")
+Aqui você usou valores individuais em vez do atalho (shorthand) para ter controle total:
+
+margin-right: 30px;: Garante que o botão não encoste na beirada direita da tela.
+
+margin-top: 20px;: Cria um espaço entre o retângulo do gerenciador de tarefas e o botão.
+
+margin-bottom: 40px;: Deixa um espaço livre no final da página, para o botão não ficar colado no rodapé ou no fim do navegador.
+
+🎨 Identidade Visual
+background-color: rgba(0, 0, 0, 0.7);: Mantém o fundo preto translúcido (o 0.7 significa 70% de cor e 30% de transparência).
+
+text-decoration: none;: Remove aquele sublinhado azul padrão que todo link (<a>) tem.
+
+font-family: 'Orbitron', sans-serif;: Mantém a fonte futurista para combinar com o resto do seu projeto.
+
+transition: all 0.3s;: Prepara o terreno para animações. Se você mudar a cor no :hover, ela vai deslizar suavemente em 0,3 segundos.

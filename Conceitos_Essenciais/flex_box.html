@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <style>
+        /* Sempre ligar o flexbox no elemento Pai no nosso caso (ul) que contém os elementos-> display: flex; */
+        body {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .horizontal-div {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .vertical-div {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Alinhamento Horizontal */
+        .horizontal-div ul {
+            display: flex;
+            /* Torna a lista um flex container */
+            flex-direction: row;
+            /* Itens lado a lado (padrão) */
+            justify-content: center;
+            /* Centraliza na horizontal */
+            list-style: none;
+            /* Opcional: remove as bolinhas da lista */
+            padding: 0;
+            gap: 10px;
+            background-color: brown;
+            color: white;
+            border: 6px solid black;
+            margin: 10px;
+            gap: 16px;
+        }
+
+        /* Alinhamento Vertical */
+        .vertical-div ul {
+            display: flex;
+            /* Torna a lista um flex container */
+            flex-direction: column;
+            /* Itens um abaixo do outro */
+            align-items: center;
+            /* Centraliza na horizontal (eixo secundário) */
+            list-style: none;
+            padding: 0;
+            background-color: blueviolet;
+            color: white;
+            border: 6px solid black;
+            margin: 10px;
+            gap: 16px;
+        }
+
+
+        /* Devemos aplicar
+    </style>
+</head>
+
+<body>
+    <section id="horizontal">
+        <h1>Horizontal</h1>
+        <div class="horizontal-div">
+            <ul>
+                <li>Oi</li>
+                <li>tudo</li>
+                <li>Bem</li>
+                <li>?</li>
+            </ul>
+        </div>
+
+        <section id="Vertical">
+            <h1>Vertifical</h1>
+            <div class="vertical-div">
+                <ul>
+                    <li>Oi</li>
+                    <li>tudo</li>
+                    <li>Bem</li>
+                    <li>?</li>
+                </ul>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>

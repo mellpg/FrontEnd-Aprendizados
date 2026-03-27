@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Position: Relative vs Absolute</title>
+    <style>
+        /* RESET BÁSICO */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 100px;
+            background-color: #f0f0f0;
+        }
+
+        /* O PAI (A ÂNCORA) */
+        .container-pai {
+            position: relative;
+            /* ESSENCIAL: Ele vira a referência para os filhos */
+            width: 800px;
+            height: 550px;
+            background-color: #ffffff;
+            border: 4px solid black;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Defina uma configuração comum para os dois */
+        .filho-relativo,
+        .filho-absoluto {
+            width: 150px;
+            /* Largura igual */
+            height: 100px;
+            /* Altura igual */
+            padding: 10px 15px;
+            /* Preenchimento igual */
+            border: 12px solid black;
+            /* Borda igual */
+            background-color: #e74c3c;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Agora aplique apenas o que é diferente (a posição) */
+        .filho-absoluto {
+            /* Zerado no topo e na direita */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .filho-relativo {
+            position: relative;
+            /* Ele fica no fluxo normal */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align: center; margin-bottom: 20px;">Como funciona a Hierarquia de Position</h2>
+
+    <div class="container-pai">
+        <h1>Estamos no mesmo container</h1>
+        <br>
+        <h1> Cadê o filho?</h1>
+        <br>
+        Eu sou o <b>Pai (Relative)</b>. <br>
+        Minha posição serve de "mapa" para o meu filho.
+        <br>
+        <br>
+
+        <div class="filho-relativo">
+            FILHO RELATIVO
+        </div>
+        <br>
+
+        <div class="filho-absoluto">
+            SOU ABSOLUTO
+        </div>
+        <br>
+        <p class="texto-comum">
+            Eu sou um texto comum. Perceba que o elemento vermelho está "em cima" de mim,
+            pois ele não ocupa mais espaço no chão do layout.
+        </p>
+    </div>
+
+</body>
+
+</html>

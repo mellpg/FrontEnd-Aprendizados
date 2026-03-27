@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando Displays</title>
+    <style>
+        .texto2 {
+            display: none;
+        }
+
+        .texto3-hidden {
+            border: 5px solid green;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .texto3-hidden p {
+            border: 5px solid green;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .texto3-escondido {
+            visibility: hidden;
+
+
+        }
+
+        .texto4 {
+            display: inline-block;
+            border: 4px solid green;
+        }
+
+        .texto5 {
+            display: block;
+            border: 4px solid green;
+        }
+
+        .texto6 {
+            display: inline;
+
+        }
+
+
+        .lista2 {
+            margin: 10%;
+            border: 10px solid black;
+            background-color: green;
+        }
+
+        li {
+            display: inline;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Display</h1>
+    <p>Texto1</p>
+    <p class="texto2">Texto2</p>
+    <div class="texto3-hidden">
+        <p>Texto 3 não vai aparecer, mas vai continuar ocupando espaço</p>
+        <p class="texto3-escondido">Texto3</p>
+        <p>Mostrando espaço ocupado do Hidden</p>
+    </div>
+    <p>Texto4</p>
+    <p>Texto5</p>
+    <p>Texto6</p>
+    <p>Texto7</p>
+    <p>Texto8</p>
+
+    <sectiom id="outra-lista">
+        <div class="lista2">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre a empresa</a></li>
+                <li><a href="#">Contato</a></li>
+
+
+            </ul>
+        </div>
+    </sectiom>
+</body>
+
+</html>

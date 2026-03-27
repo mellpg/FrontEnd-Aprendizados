@@ -1,0 +1,10 @@
+O uso de display: block; em links (<a>) dentro de menus (<li>) é uma prática padrão de CSS para transformar uma pequena área de texto em um botão completo e clicável. 
+
+Por padrão, a tag <a> é inline, o que significa que ela só ocupa o espaço do texto (ex: se o texto for "Home", a área clicável é apenas em cima da palavra "Home"). 
+Por que usar display: block;?
+Área Clicável Maior (Melhor UX): Com block, o link ocupa toda a largura disponível do elemento pai (li ou ul), facilitando o clique ou toque em dispositivos móveis.
+Preenchimento da Área (Padding): Ao usar padding: 10px 20px;, o link expande sua área clicável para cima e para baixo. Se o link fosse inline, o padding vertical não empurraria os outros elementos e se sobreporia a eles.
+Funcionamento do border-radius e fundo: Quando você adiciona um background-color ou border-radius (cantos arredondados) em um link inline, ele fica estranho. Com block, o estilo se aplica a todo o retângulo do botão.
+Alinhamento: Garante que cada item do menu fique em sua própria linha (empilhamento vertical) e ocupe todo o espaço horizontal, alinhando-se perfeitamente com o layout. 
+
+Resumo: display: block transforma o link de um simples "texto sublinhado" para um "botão/bloco" sólido e interativo.

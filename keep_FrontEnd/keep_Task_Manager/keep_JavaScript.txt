@@ -1,0 +1,192 @@
+// Recupera as tarefas que estavam salvas no navegador (localStorage)
+// localStorage.getItem("tarefas") pega o valor salvo com a chave "tarefas"
+// JSON.parse converte o texto salvo em um objeto/array JavaScript novamente
+// Se não existir nada salvo, usa um array vazio []
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+
+
+// Pega no HTML o elemento que contém a lista de tarefas
+const listaTarefas = document.getElementById("listaTarefas");
+
+// Pega o campo de input onde o usuário digita a nova tarefa
+const inputTarefa = document.getElementById("novaTarefa");
+
+
+// Função responsável por desenhar as tarefas na tela
+function renderizarTarefas() {
+
+    // Limpa a lista antes de redesenhar tudo
+    // Isso evita duplicação de tarefas na interface
+    listaTarefas.innerHTML = "";
+
+    // Percorre cada tarefa do array "tarefas"
+    // forEach executa a função para cada item do array
+    tarefas.forEach((tarefa, index) => {
+
+        // Cria um elemento div no HTML
+        const divTarefa = document.createElement("div");
+
+        // Adiciona a classe CSS "tarefa"
+        divTarefa.classList.add("tarefa");
+
+        // Adiciona também a classe com o status da tarefa
+        // pode ser: pendente, feito ou cancelado
+        // isso permite mudar o estilo no CSS
+        divTarefa.classList.add(tarefa.status);
+
+        // Define o conteúdo HTML dentro da div
+        divTarefa.innerHTML = `
+
+            <!-- texto da tarefa -->
+            <span>${tarefa.texto}</span>
+
+            <!-- botão que chama a função marcarFeito -->
+            <button onclick="marcarFeito(${index})">Feito</button>
+
+            <!-- botão que chama a função cancelarTarefa -->
+            <button onclick="cancelarTarefa(${index})">Cancelar</button>
+        `;
+
+        // Adiciona a div da tarefa dentro da lista de tarefas
+        listaTarefas.appendChild(divTarefa);
+    });
+}
+
+
+
+// Função para adicionar uma nova tarefa
+function adicionarTarefa() {
+
+    // Pega o texto digitado no input
+    const texto = inputTarefa.value.trim();
+
+    // trim() remove espaços antes e depois do texto
+
+    // Se o campo estiver vazio, a função para aqui
+    if (texto === "") return;
+
+    // Adiciona um novo objeto dentro do array tarefas
+    tarefas.push({
+
+        // texto da tarefa
+        texto,
+
+        // status inicial da tarefa
+        status: "pendente"
+    });
+
+    // Salva a lista atualizada no navegador
+    salvarTarefas();
+
+    // Atualiza a interface na tela
+    renderizarTarefas();
+
+    // Limpa o campo de input
+    inputTarefa.value = "";
+}
+
+
+
+// Função que marca uma tarefa como concluída
+function marcarFeito(index) {
+
+    // muda o status da tarefa para "feito"
+    tarefas[index].status = "feito";
+
+    // salva novamente no localStorage
+    salvarTarefas();
+
+    // atualiza a tela
+    renderizarTarefas();
+}
+
+
+
+// Função que cancela uma tarefa
+function cancelarTarefa(index) {
+
+    // muda o status da tarefa para "cancelado"
+    tarefas[index].status = "cancelado";
+
+    // salva novamente no localStorage
+    salvarTarefas();
+
+    // atualiza a tela
+    renderizarTarefas();
+}
+
+
+
+// Função responsável por salvar as tarefas no navegador
+function salvarTarefas() {
+
+    // localStorage só aceita texto
+    // JSON.stringify converte o array em texto JSON
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
+
+
+
+// Função que apaga todas as tarefas
+function limparTarefas() {
+
+    // redefine o array de tarefas como vazio
+    tarefas = [];
+
+    // salva a lista vazia no localStorage
+    salvarTarefas();
+
+    // atualiza a interface
+    renderizarTarefas();
+}
+
+
+
+// Quando a página carrega, essa função executa automaticamente
+// Ela desenha na tela as tarefas que estavam salvas
+renderizarTarefas();
+
+
+
+
+Estrutura lógica desse código (resumida)
+
+O programa funciona em 4 etapas principais:
+
+Carrega dados
+
+pega tarefas salvas no localStorage.
+
+Mostra na tela
+
+renderizarTarefas() cria o HTML das tarefas.
+
+Usuário interage
+
+adicionar
+
+marcar como feito
+
+cancelar
+
+limpar tarefas
+
+Salva novamente
+
+salvarTarefas() grava no navegador.
+
+Conceitos importantes que aparecem nesse código
+
+Array de objetos
+
+DOM manipulation
+
+localStorage
+
+JSON.stringify / JSON.parse
+
+funções com parâmetros
+
+eventos de botão
+
+Esse tipo de código já é uma mini aplicação front-end real, não apenas exercício.

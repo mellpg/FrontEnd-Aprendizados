@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparativo: CSS Profile Photo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Comparativo de Estilização de Imagem</h1>
+
+    <div class="main-container">
+      <div class="card">
+        <h3>1. Apenas Object-fit</h3>
+        <p>A imagem mantém a proporção, mas as quinas "vazam" do círculo.</p>
+        <div class="foto apenas-object-fit">
+          <img src="windows.png" alt="Foto de Perfil" />
+        </div>
+        <code>overflow: visible;</code>
+      </div>
+
+      <div class="card">
+        <h3>2. Apenas Overflow</h3>
+        <p>Sem object-fit: a tela do Windows fica "esmagada" lateralmente.</p>
+        <div class="foto apenas-overflow">
+          <img src="windows.png" alt="Foto de Perfil" class="img-distorcida" />
+        </div>
+        <code>object-fit: fill;</code>
+      </div>
+
+      <div class="card">
+        <h3>3. Maneira Correta</h3>
+        <p>A tela mantém a proporção original, cortando as laterais.</p>
+        <div class="foto combo-perfeito">
+          <img src="windows.png" alt="Foto de Perfil" />
+        </div>
+        <code>Combo: Hidden + Cover</code>
+      </div>
+    </div>
+  </body>
+</html>

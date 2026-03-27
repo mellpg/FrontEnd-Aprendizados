@@ -1,0 +1,136 @@
+Seletores ( Como css escolhe elementos)
+
+Class (.)
+
+. card {
+color:white
+
+} 
+
+Quando usar? Para vários elementos
+
+Id (#)
+
+#menu {
+
+background: black
+
+} 
+
+Quando usar? Usado para um elemento único
+
+
+Displays
+
+É uma propriedade usada para especificar se o elemento é
+exibido e como será exibido
+
+Display: none -> Utilizado com javascript para ocultar e mostrar elementos
+Visibility : hidden -> Esconde um elemento, mas o elemento ainda ocupará o espaço
+
+display: block -> Apresentar os elementos 
+display: inline -> Apresentar os elementos na horizontal
+
+
+
+As propriedades CSS display: none e visibility: hidden (ou o atributo HTML hidden) servem para ocultar elementos de uma página web, mas funcionam de maneiras diferentes e são usadas para propósitos distintos. 
+Aqui está um resumo do "para que serve" e "por que esconder":
+1. display: none (Remoção total) 
+O que faz: Remove o elemento completamente do layout da página. É como se o elemento nunca tivesse existido.
+Espaço: O elemento não ocupa espaço. Outros elementos próximos se movem para preencher o vazio.
+Para que serve:
+Menus Dropdown/Modais: Esconder um menu ou janela modal e mostrá-lo apenas quando necessário (via JS ou CSS :hover).
+Responsividade: Esconder elementos grandes em telas de celular que só devem aparecer no desktop.
+Toggles: Alternar entre seções de conteúdo. 
+YouTube
+YouTube
+ +4
+2. visibility: hidden (Ocultação visual)
+O que faz: Torna o elemento invisível, mas ele continua a fazer parte do layout.
+Espaço: O elemento mantém o espaço que ocupava, deixando um "buraco" vazio na tela.
+Para que serve:
+Layout Fixo: Esconder um elemento temporariamente sem que o resto da página pule ou saia do lugar.
+Efeitos de Transição: Quando você quer aplicar uma animação para o elemento reaparecer (já que display: none não pode ser animado facilmente). 
+Resumo Comparativo:
+Propriedade 	Visível?	Ocupa Espaço?	Interativo?	Afeta o Layout?
+display: none	Não	Não	Não	Sim (recalcula)
+visibility: hidden	Não	Sim	Não	Não
+Por que esconder elementos?
+Melhorar a UX (Experiência do Usuário): Evita sobrecarga de informação. Ex: ocultar etapas de um formulário que só devem aparecer depois que o usuário clicar em "próximo".
+Responsividade (Mobile First): Esconder sidebars ou menus laterais complexos em dispositivos móveis, substituindo-os por um menu "hambúrguer".
+Interatividade: Criar galerias de imagens, acordeões (faqs), abas e modais que dependem de ações do usuário (clique, hover).
+Acessibilidade (com hidden ou aria-hidden): Ocultar conteúdo que é irrelevante para leitores de tela ou ocultar elementos de suporte visual que não servem para usuários cegos.
+Performance: Elementos com display: none não são renderizados, o que pode ajudar em casos específicos de performance em páginas muito complexas. 
+
+
+
+
+O content-box é o modelo de caixa padrão do CSS. Nele, a largura (width) e a altura (height) definidas para um elemento aplicam-se apenas à área de conteúdo, sem incluir preenchimento (padding) ou bordas (border). Isso significa que o tamanho total do elemento na tela será a soma: conteúdo + padding + borda. 
+YouTube
+YouTube
+ +2
+Principais características do content-box:
+Comportamento Padrão: É o valor padrão da propriedade box-sizing em quase todos os navegadores, segundo a DIO.
+Cálculo Aditivo: Adicionar padding ou border aumenta o tamanho total do elemento, o que pode desorganizar layouts responsivos se não for calculado.
+Exemplo: Se você definir div { width: 100px; padding: 10px; }, a largura total da div será 
+ (
+ + 
+ esquerda + 
+ direita), não 
+. 
+
+
+
+Exatamente! O "bug" foi puramente uma crise de espaço matemático. No CSS, se você define uma caixa menor do que a soma das bordas e do preenchimento, o conteúdo (o texto) não tem onde morar e acaba transbordando ou encavalando.
+
+
+
+
+
+á o detalhamento:
+content-box (Padrão/Default): É o comportamento histórico do CSS. Quando você define width: 100px, apenas o conteúdo tem 100px. Padding e bordas são adicionados fora desse tamanho, aumentando o tamanho total do elemento.
+border-box (Personalizado/Alternativo): É uma propriedade usada para alterar esse comportamento. Quando você define box-sizing: border-box, o padding e a borda são incluídos dentro do tamanho definido (100px), diminuindo o conteúdo para acomodá-los. 
+YouTube
+YouTube
+ +4
+Por que border-box é o preferido?
+Apesar de ser uma personalização, border-box é considerada uma boa prática moderna (frequentemente aplicada a todos os elementos com * { box-sizing: border-box; }) porque facilita o cálculo de layouts, impedindo que elementos saiam de suas caixas pai ao adicionar padding ou bordas. 
+YouTube
+YouTube
+ +3
+
+
+
+Não. O uso de box-sizing: border-box; e display: flex; são recursos totalmente independentes no CSS. 
+Stack Overflow em Português
+Stack Overflow em Português
+ +1
+Aqui está o porquê:
+box-sizing: border-box;: Define como o tamanho (largura/altura) de um elemento é calculado. Ele faz com que o padding e a borda fiquem dentro da largura definida, não aumentando o tamanho total do elemento.
+display: flex;: Define o comportamento de layout e alinhamento de um contêiner e seus itens, tornando-os flexíveis em um eixo. 
+YouTube
+YouTube
+ +4
+Você pode usar border-box em elementos com display: block, inline-block, grid, etc. 
+Quando eles são usados juntos?
+É muito comum usar box-sizing: border-box; dentro de um display: flex; para garantir que os itens flexíveis não aumentem de tamanho ao adicionar padding, mantendo o layout organizado e facilitando a responsividade. 
+Stack Overflow em Português
+Stack Overflow em Português
+ +2
+Resumo: border-box é sobre o cálculo do tamanho, enquanto flex é sobre o posicionamento. 
+
+
+/
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            /* Inclui borda e padding no cálculo do width */
+            margin: 0;
+            /* Remove margens padrão que os navegadores colocam */
+            padding: 0;
+            /* Remove preenchimentos padrão que os navegadores colocam */
+        }
+
+* -> TUDO, *;: before, :: after -> Tudo que for decorativo, animação, detalhes externos 
+

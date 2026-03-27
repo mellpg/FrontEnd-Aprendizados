@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Desafio do Conteúdo Escondido - AGORA VAI!</title>
+    <!-- Elementos fixed são "fantasmas": Eles não ocupam lugar na fila do pão. Eles flutuam. Se você não abrir um espaço para eles (com padding), o conteúdo vai tentar ocupar o mesmo lugar e alguém vai acabar escondido.-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: white;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* BARRAS FIXAS */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        background: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999; /* Valor muito alto */
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999; /* Valor muito alto */
+      }
+
+      .coluna {
+        flex: 1;
+        overflow-y: auto;
+        border: 1px solid #444;
+        /* Forçamos a coluna a ficar "atrás" das barras */
+        position: relative;
+        z-index: 1;
+      }
+
+      .erro {
+        background-color: #222;
+      }
+
+      .sucesso {
+        background-color: #333;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .conteudo-longo {
+        height: 1500px;
+        padding: 0 20px;
+      }
+
+      h2 {
+        color: yellow;
+        margin-bottom: 20px;
+      }
+      .fim {
+        background: green;
+        padding: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">NAVBAR FIXA (60px)</div>
+
+    <div class="coluna erro">
+      <div class="conteudo-longo">
+        <h2>TITULO ESCONDIDO</h2>
+        <p>No topo, o título já começa atrás do vermelho.</p>
+        <p style="margin-top: 1300px">--- ROLE ATÉ O FINAL ---</p>
+        <span class="fim">ESTOU ATRÁS DO AZUL!</span>
+      </div>
+    </div>
+
+    <div class="coluna sucesso">
+      <div class="conteudo-longo">
+        <h2>TITULO VISÍVEL</h2>
+        <p>O padding-top empurrou este título para baixo.</p>
+        <p style="margin-top: 1300px">--- ROLE ATÉ O FINAL ---</p>
+        <span class="fim">ESTOU ACIMA DO AZUL!</span>
+      </div>
+    </div>
+
+    <div class="footer">FOOTER FIXO (60px)</div>
+  </body>
+</html>

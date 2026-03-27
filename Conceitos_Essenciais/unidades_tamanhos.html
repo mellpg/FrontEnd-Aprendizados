@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia de Unidades CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            /* Fonte base para o cálculo de 'em' */
+            padding: 20px;
+        }
+
+        .container-pai {
+            width: 500px;
+            /* Largura fixa em pixels */
+            height: 400px;
+            border: 3px dashed #333;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        /* 1. PIXEL (px) -> Fixo e rígido */
+        .caixa-px {
+            width: 200px;
+            height: 50px;
+            background-color: #e74c3c;
+            color: white;
+            margin-bottom: 10px;
+            /* Não importa o tamanho da tela, ela sempre terá 200px */
+        }
+
+        /* 2. PORCENTAGEM (%) -> Relativo ao elemento PAI */
+        .caixa-porcentagem {
+            width: 50%;
+            height: 50px;
+            background-color: #3498db;
+            color: white;
+            margin-bottom: 10px;
+            /* Como o pai tem 500px, esta caixa terá 250px (metade) */
+        }
+
+        /* 3. EM (em) -> Relativo ao tamanho da FONTE */
+        .caixa-em {
+            width: 10em;
+            height: 3em;
+            background-color: #2ecc71;
+            color: white;
+            margin-bottom: 10px;
+            /* Se a fonte é 16px, 10em = 160px. Se aumentar a fonte, a caixa cresce! */
+        }
+
+        /* 4. VIEWPORT WIDTH/HEIGHT (vw/vh) -> Relativo à TELA do navegador */
+        .caixa-viewport {
+            width: 20vw;
+            height: 10vh;
+            background-color: #f1c40f;
+            color: black;
+            /* 20vw = 20% da largura da tela total. 
+               10vh = 10% da altura da tela total. */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Exemplo de Unidades</h1>
+
+    <div class="container-pai">
+        <p>Sou o Pai (500px)</p>
+
+        <div class="caixa-px">200px (Fixo)</div>
+
+        <div class="caixa-porcentagem">50% (Metade do pai)</div>
+
+        <div class="caixa-em">10em (Baseado na fonte)</div>
+
+        <div class="caixa-viewport">20vw x 10vh (Baseado na tela)</div>
+    </div>
+
+</body>
+
+</html>

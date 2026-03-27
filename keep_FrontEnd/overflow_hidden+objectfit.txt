@@ -1,0 +1,36 @@
+O uso de overflow: hidden no contêiner .foto junto com object-fit: cover na imagem é uma prática recomendada de defesa (segurança) e consistência visual, mesmo que o object-fit redimensione a imagem. 
+Aqui estão os motivos principais:
+1. Garantir o Formato Circular (Bordas Arredondadas)
+Quando você define border-radius: 50% no contêiner .foto para criar um círculo, o navegador aplica o arredondamento na "caixa" do contêiner.
+Sem overflow: hidden: A imagem, mesmo redimensionada pelo object-fit, pode "vazar" pelos cantos quadrados do contêiner, ignorando o arredondamento.
+Com overflow: hidden: Você força a imagem a respeitar os limites do contêiner, cortando qualquer pixel que ultrapasse o formato de círculo. 
+Reddit
+Reddit
+ +2
+2. Segurança contra Imagens Desproporcionais
+O object-fit: cover garante que a imagem preencha 100% da área (largura e altura) sem distorcer, mantendo a proporção. No entanto, se o contêiner for pequeno e a imagem muito grande, ou se houver bordas, margens ou transformações CSS (como hover) na imagem, ela pode se comportar de maneira inesperada. O overflow: hidden garante que nada saia para fora, agindo como um "seguro" para o layout. 
+Reddit
+Reddit
+ +4
+3. Melhoria na Performance de Renderização
+Em alguns navegadores (especialmente Safari/Webkit), aplicar border-radius diretamente em elementos <img> com object-fit pode apresentar falhas de renderização onde os cantos ainda aparecem. O overflow: hidden no elemento pai (div.foto) resolve esses bugs de renderização. 
+Gist
+Gist
+Resumo
+Propriedade 	Função
+object-fit: cover	Redimensiona a imagem para preencher o espaço, cortando o excesso e mantendo a proporção.
+overflow: hidden	Corta fisicamente qualquer parte da imagem que tente sair do contêiner, garantindo que o círculo seja perfeito.
+Portanto, o object-fit organiza a imagem interna, e o overflow: hidden protege a integridade visual da "moldura" (o círculo). 
+
+
+
+O object-fit cuida de como a imagem se comporta dentro do espaço dela (evitando que ela fique esticada ou esmagada). Já o overflow: hidden no contêiner pai serve como uma "tesoura": ele garante que nada que ultrapasse os limites daquele círculo (especialmente os cantos da imagem original, que é quadrada) seja exibido.
+
+Se você remover o overflow: hidden, em muitos navegadores a imagem pode "vazar" para fora da curvatura do border-radius, quebrando o efeito de círculo perfeito.
+
+
+Você disse
+mostre apenas usando object fit, depois so usando overflow hidden, e depois mostrando utlizando os dois (a maneira correta)
+
+O Gemini disse
+Para entender visualmente, imagine que o contêiner (a div .foto) é uma moldura de quadro circular e a imagem é a pintura que tentamos encaixar nela.

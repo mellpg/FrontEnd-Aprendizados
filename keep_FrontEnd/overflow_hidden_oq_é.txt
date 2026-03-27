@@ -1,0 +1,51 @@
+A propriedade CSS overflow: hidden; é utilizada para esconder qualquer conteúdo de um elemento que ultrapasse os limites (largura ou altura) definidos para ele. Quando aplicada, o conteúdo "transbordante" não é renderizado na tela e nenhuma barra de rolagem é exibida. 
+YouTube
+YouTube
+ +1
+Aqui está uma explicação detalhada sobre seu uso:
+1. O que é overflow: hidden;?
+Significado: "Transbordamento: Escondido".
+Funcionamento: Se você tem uma div de 200x200px (um quadrado) e coloca dentro dela uma imagem de 400x400px, o overflow: hidden; fará com que apenas a área de 200x200px da imagem seja visível, cortando o restante.
+Comentário no seu código: /* Esconde partes da imagem fora do círculo */ refere-se ao uso comum com border-radius: 50%. Ao aplicar hidden num container circular, ele "corta" os cantos quadrados da imagem, fazendo-a encaixar perfeitamente no círculo. 
+Medium
+Medium
+ +4
+2. Para que serve e quando usar?
+Cenário 	Para que serve?	Exemplo de Uso
+Imagens/Avatares	Criar fotos de perfil circulares (molduras).	.perfil { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; }
+Layouts (Cards)	Impedir que imagens ou textos "estourem" o card, mantendo o design limpo.	Um card de notícias onde a imagem é maior que o espaço destinado.
+Limitar Texto	Esconder linhas extras de texto em um card para manter a mesma altura.	div { height: 50px; overflow: hidden; }
+Clearfix (Floats)	Resolver problemas onde um elemento pai não reconhece a altura de filhos flutuantes (float).	.pai { overflow: hidden; } (melhor alternativa ao clearfix antigo).
+Animações	Esconder elementos que estão "fora da tela" antes ou depois de uma animação.	Slider de imagens, menus laterais.
+3. Exemplo Prático: Imagem Circular
+Para fazer uma imagem circular com overflow: hidden:
+html
+<div class="circulo">
+  <img src="foto.jpg" alt="Perfil">
+</div>
+css
+.circulo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Faz o container ser um círculo */
+  overflow: hidden;   /* Oculta tudo que sai do círculo */
+  border: 2px solid #ccc;
+}
+
+.circulo img {
+  width: 100%;       /* Imagem ocupa toda a largura do container */
+  height: auto;
+}
+4. Diferença Importante (hidden vs visible)
+overflow: visible; (Padrão): O conteúdo transborda e fica visível fora da caixa.
+overflow: hidden;: O conteúdo transborda mas não fica visível.
+overflow: scroll;: O conteúdo transborda, mas adiciona barras de rolagem. 
+YouTube
+YouTube
+ +1
+Pontos de Atenção
+O overflow: hidden; não é o método mais acessível para esconder conteúdo totalmente (como textos importantes), pois leitores de tela ainda podem processá-lo. Para esconder totalmente, prefira display: none;.
+Ele é ineficaz se o elemento não tiver uma altura (height) ou largura (width) definida. 
+accessibilité numérique Orange
+accessibilité numérique Orange
+ +4

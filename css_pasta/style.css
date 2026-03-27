@@ -1,0 +1,30 @@
+body {
+    background-color: powderblue;
+}
+
+h1 {
+    color: blue;
+    font-family: courier;
+    font-size: 160%;
+    border: 2px solid powderblue;
+    padding: 30px;
+    margin: 20px;
+}
+
+p {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+    border: 2px solid powderblue;
+    padding: 30px;
+    margin: 20px;
+}
+
+h2 {
+    color: green;
+    font-family: courier;
+    font-size: 160%;
+    border: 2px solid powderblue;
+    padding: 30px;
+    margin: 20px;
+}

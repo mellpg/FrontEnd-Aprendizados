@@ -1,0 +1,41 @@
+A propriedade CSS object-fit: cover; é utilizada para definir como uma imagem (ou vídeo) deve ser redimensionada para preencher o seu contêiner (como uma div ou figure) sem perder a sua proporção original (aspect ratio) e sem causar distorções. 
+W3Schools
+W3Schools
+ +2
+Aqui está uma explicação detalhada sobre para que serve:
+Para que serve?
+Preenchimento Total: A imagem estica ou diminui até preencher completamente o contêiner, garantindo que não haja espaços vazios.
+Preservação da Proporção (Sem Distorção): Diferente de apenas definir largura e altura (width e height), o cover impede que a imagem fique "achatada" ou "esticada".
+Recorte Automático (Cropping): Se a proporção da imagem for diferente da proporção do contêiner, o object-fit: cover corta (recorta) as bordas da imagem que sobrarem, centralizando-a para garantir o preenchimento. 
+W3Schools
+W3Schools
+ +4
+Exemplo Prático
+Imagine que você tem uma imagem de paisagem (horizontal) que precisa se encaixar em um contêiner quadrado (100px x 100px).
+css
+.container {
+  width: 100px;
+  height: 100px;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a mágica acontecer */
+}
+Com object-fit: cover;: A imagem preenche o quadrado de 100x100. As laterais da paisagem serão cortadas, mas a imagem não fica distorcida.
+Sem object-fit: cover;: A imagem seria espremida para caber no quadrado, ficando distorcida (achatada). 
+DigitalOcean
+DigitalOcean
+ +2
+Onde usar?
+Galeria de Fotos: Garantir que todas as miniaturas tenham o mesmo tamanho.
+Avatar/Perfil: Criar fotos redondas (junto com border-radius: 50%) a partir de imagens quadradas ou retangulares.
+Hero Section/Banners: Preencher a tela com uma imagem de fundo que se ajusta a diferentes tamanhos de tela. 
+YouTube
+YouTube
+ +1
+Resumo: Use object-fit: cover quando precisar que uma imagem preencha um espaço fixo perfeitamente, aceitando que partes dela sejam cortadas para manter a proporção correta. 
+Maujor
+Maujor
+ +1

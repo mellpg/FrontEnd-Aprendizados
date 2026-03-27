@@ -1,0 +1,38 @@
+body {
+    margin: 0;                         /* Remove a margem padrão do navegador (tira o espaço branco nas bordas) */
+    padding: 0;                        /* Remove o preenchimento interno padrão do corpo da página */
+    font-family: "Times new Roman";    /* Define a fonte clássica com serifa para todo o texto do site */
+}
+
+.navbar {
+    background-color: #333;            /* Define o fundo como cinza grafite (um pouco mais claro que o preto) */
+    position: fixed;                   /* Fixa o menu no topo; ele não some quando você rola a página */
+    top: 0;                            /* Garante que o menu esteja colado exatamente no limite superior */
+    width: 100%;                       /* Faz com que a barra ocupe toda a largura da tela horizontalmente */
+    z-index: 1000;                     /* Coloca o menu em uma "camada" acima de tudo para nada passar por cima */
+}
+
+.menu {
+    list-style: none;                  /* Remove as bolinhas (marcadores) padrão da lista <ul> */
+    margin: 0;                         /* Zera qualquer margem externa que a lista possa ter */
+    padding: 0;                        /* Zera o recuo (espaço à esquerda) que o navegador coloca em listas */
+    overflow: hidden;                  /* Corta conteúdos que saiam do limite e ajuda a conter elementos flutuados */
+}
+
+.menu li {
+    float: left;                       /* Faz os itens (<li>) alinharem um ao lado do outro horizontalmente */
+}
+
+.menu li a {
+    display: block;                    /* Transforma o link em um bloco clicável que ocupa toda a área definida */
+    color: #f2f2f2;                    /* Define a cor do texto como um cinza bem clarinho (quase branco) */
+    text-align: center;                /* Centraliza o texto dentro do espaço de cada link */
+    padding: 14px 16px;                /* Cria o "corpo" do botão: 14px de altura e 16px de largura interna */
+    text-decoration: none;             /* Remove o sublinhado azul padrão dos links */
+    font-size: 17px;                   /* Define o tamanho da letra nos botões do menu */
+}
+
+.menu li a:hover {
+    background-color: #ddd;            /* Muda o fundo para cinza claro quando o mouse passa por cima */
+    color: black;                      /* Muda a cor da letra para preto no momento do hover */
+}

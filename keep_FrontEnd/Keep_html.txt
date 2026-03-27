@@ -1,0 +1,425 @@
+📌 Resumo do Capítulo
+
+Todos os elementos HTML podem ter atributos.
+
+O atributo href da tag <a> especifica a URL para a qual o link direciona.
+
+O atributo src da tag <img> especifica o caminho da imagem a ser exibida.
+
+Os atributos width e height da tag <img> definem o tamanho da imagem.
+
+O atributo alt da tag <img> fornece um texto alternativo para a imagem.
+
+O atributo style é usado para adicionar estilos (cor, fonte, tamanho etc.).
+
+O atributo lang da tag <html> declara o idioma da página.
+
+O atributo title define informações adicionais sobre um elemento.
+
+<h1>Os títulos devem ser usados ​​para os títulos principais, seguidos pelos <h2>títulos secundários, depois os menos importantes <h3>e assim por diante.
+
+<h1>- Título da página
+<h2>- Títulos das seções
+<h3>- Subseções
+
+Exemplo:
+
+<h1>Travel Guide</h1>
+
+<h2>Europe</h2>
+<h3>France</h3>
+<h3>Italy</h3>
+
+<h2>Asia</h2>
+<h3>India</h3>
+<h3>Thailand</h3>
+
+A <hr>tag define uma quebra temática em uma página HTML e geralmente é exibida como uma linha horizontal.
+
+O <hr>elemento é usado para separar conteúdo (ou definir uma mudança) em uma página HTML:
+
+
+Links HTML - Sintaxe
+A tag HTML <a>define um hiperlink. Sua sintaxe é a seguinte:
+
+<a href="url">link text</a>
+O atributo mais importante do <a> elemento é o hrefatributo `id`, que indica o destino do link.
+
+O texto do link é a parte que ficará visível para o leitor.
+
+Clicar no link levará o leitor ao endereço URL especificado.
+
+Exemplo
+Este exemplo mostra como criar um link para o W3Schools.com:
+
+<a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+
+Por padrão, os links aparecerão da seguinte forma em todos os navegadores:
+
+Um link não visitado é sublinhado e azul.
+Um link visitado é sublinhado e fica roxo.
+Um link ativo é sublinhado e vermelho.
+Dica: É claro que os links podem ser estilizados com CSS para obter uma aparência diferente!
+
+O targetatributo especifica onde abrir o documento vinculado.
+
+O targetatributo pode ter um dos seguintes valores:
+
+_self- Padrão. Abre o documento na mesma janela/aba em que foi clicado.
+_blank- Abre o documento em uma nova janela ou aba.
+_parent- Abre o documento no frame principal
+_top- Abre o documento em tela cheia na janela.
+
+URLs absolutas vs. URLs relativas
+Os dois exemplos acima utilizam um URL absoluto (um endereço web completo) no hrefatributo.
+
+Um link local (um link para uma página dentro do mesmo site) é especificado com um URL relativo (sem a parte "https://www"):
+
+Links HTML - Usar uma imagem como link
+Para usar uma imagem como link, basta colocar a <img> tag dentro da <a>tag:
+
+Exemplo
+<a href="default.asp">
+<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+Papel de cada parte
+
+1. <a href="default.asp">
+
+Cria o link.
+
+<a> → elemento de link (âncora)
+
+href → define para onde o link leva
+
+default.asp → página que será aberta quando clicar
+
+2. <img ...>
+
+Mostra a imagem na página.
+
+<img src="smiley.gif">
+
+
+src → arquivo da imagem
+
+alt → texto alternativo
+
+style → tamanho da imagem
+
+3. </a>
+
+Fecha o link.
+
+Tudo que estiver entre <a> e </a> se torna clicável.
+
+Como o navegador interpreta
+
+Estrutura lógica:
+
+<a href="default.asp">
+    imagem
+</a>
+
+
+Resultado:
+
+a imagem aparece na página
+
+clicar na imagem abre default.asp
+
+O que é default.asp nesse exemplo
+
+Aqui ele é apenas uma página de destino do link.
+Poderia ser qualquer arquivo, por exemplo:
+
+<a href="pagina.html">
+
+
+ou
+
+<a href="https://site.com">
+
+
+O exemplo usa default.asp apenas como exemplo de página.
+
+Resultado visual
+
+Você veria algo assim na página:
+
+🖼️ (imagem smiley)
+
+Ao clicar na imagem, o navegador abre default.asp.
+
+Resumo técnico:
+
+Elemento	Função
+<a>	cria o link
+href	destino do link
+<img>	imagem exibida
+imagem dentro de <a>	imagem vira clicável
+
+
+A <map>tag HTML define um mapa de imagem. Um mapa de imagem é uma imagem com áreas clicáveis. As áreas são definidas com uma ou mais <area>tags.
+
+Tente clicar no computador, no telefone ou na xícara de café na imagem abaixo:
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+área clicável da imagem
+As áreas
+Em seguida, adicione as áreas clicáveis.
+
+Uma área clicável é definida usando um <area>elemento.
+
+Forma
+Você deve definir o formato da área clicável e pode escolher um destes valores:
+
+rect- define uma região retangular
+circle- define uma região circular
+poly- define uma região poligonal
+default- define toda a região
+Você também precisa definir algumas coordenadas para poder posicionar a área clicável na imagem. 
+
+<area shape="rect" coords="34, 44, 270, 350" href="computer.htm">
+
+Utilize o <map>elemento HTML para definir um mapa de imagem.
+Utilize o <area>elemento HTML para definir as áreas clicáveis ​​no mapa de imagem.
+Utilize o usemapatributo HTML do <img>elemento para apontar para um mapa de imagem.
+
+
+2px → deslocamento horizontal (x) da sombra para a direita
+
+2px → deslocamento vertical (y) da sombra para baixo
+
+4px → raio de desfoque da sombra (quanto maior, mais "borrada")
+
+black → cor da sombra
+
+Aquele texto brilhante
+
+body {
+            background-image: url("background_denji2.jpg");
+            color: white;
+            font-weight: bold;
+            text-shadow:
+                2px 2px 4px black;
+
+
+        }
+
+
+Se você deseja que a imagem de fundo cubra todo o elemento, pode definir a background-sizepropriedade para cover.
+
+Além disso, para garantir que todo o elemento esteja sempre coberto, defina a background-attachmentpropriedade parafixed:
+
+Dessa forma, a imagem de fundo cobrirá todo o elemento, sem distorções (a imagem manterá suas proporções originais):
+
+Exemplo
+<style>
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+
+Mapa de imagem e JavaScript
+Uma área clicável também pode acionar uma função JavaScript.
+
+Adicione um clickevento ao <area>elemento para executar uma função JavaScript:
+
+Exemplo
+Aqui, usamos o atributo onclick para executar uma função JavaScript quando a área é clicada:
+
+<map name="workmap">
+  <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">
+</map>
+
+<script>
+function myFunction() {
+  alert("You clicked the coffee cup!");
+}
+</script>
+
+
+Resumo do Capítulo
+Utilize o <map>elemento HTML para definir um mapa de imagem.
+Utilize o <area>elemento HTML para definir as áreas clicáveis ​​no mapa de imagem.
+Utilize o usemapatributo HTML do <img>elemento para apontar para um mapa de imagem. 
+
+
+O <picture>elemento HTML oferece aos desenvolvedores web mais flexibilidade na especificação de recursos de imagem.
+
+O <picture>elemento contém um ou mais <source>elementos, cada um fazendo referência a diferentes imagens através do srcset atributo. Dessa forma, o navegador pode escolher a imagem que melhor se adapta à visualização e/ou ao dispositivo atual.
+
+Cada <source>elemento possui um mediaatributo que define quando a imagem é mais adequada.
+
+Exemplo
+Exibir imagens diferentes para tamanhos de tela diferentes:
+
+<picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture>
+
+Quando usar o elemento de imagem
+Existem dois objetivos principais para o <picture>elemento:
+
+1. Largura de banda
+Se você tiver uma tela ou dispositivo pequeno, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro <source> elemento com valores de atributo correspondentes e ignorará os elementos seguintes.
+
+2. Suporte a formatos
+Alguns navegadores ou dispositivos podem não suportar todos os formatos de imagem. Ao usar o <picture>elemento, você pode adicionar imagens de todos os formatos, e o navegador usará o primeiro formato que reconhecer, ignorando os elementos seguintes.
+
+Exemplo
+O navegador usará o primeiro formato de imagem que reconhecer:
+
+<picture>
+  <source srcset="img_avatar.png">
+  <source srcset="img_girl.jpg">
+  <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+</picture>
+Nota: O navegador utilizará o primeiro <source>elemento com valores de atributo correspondentes e ignorará quaisquer <source>elementos subsequentes.
+
+Exercício
+?
+Um desses elementos NÃO é um elemento HTML válido. Qual deles?
+
+
+Como adicionar um favicon em HTML
+Você pode usar qualquer imagem que desejar como favicon. Você também pode criar seu próprio favicon em sites como https://www.favicon.cc .
+
+Dica: Um favicon é uma imagem pequena, portanto deve ser uma imagem simples com alto contraste.
+
+Uma imagem de favicon é exibida à esquerda do título da página na aba do navegador, assim:
+
+Exemplo de favicon
+Para adicionar um favicon ao seu site, salve a imagem do favicon no diretório raiz do seu servidor web ou crie uma pasta chamada "images" dentro do diretório raiz e salve a imagem do favicon nessa pasta. Um nome comum para uma imagem de favicon é "favicon.ico".
+
+Em seguida, adicione um <link>elemento ao seu arquivo "index.html", após o <title>elemento, assim:
+
+Exemplo
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page Title</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+
+Tags de tabela HTML
+Tag	Description
+<table>	Defines a table
+<th>	Defines a header cell in a table
+<tr>	Defines a row in a table
+<td>	Defines a cell in a table
+<caption>	Defines a table caption
+<colgroup>	Specifies a group of one or more columns in a table for formatting
+<col>	Specifies column properties for each column within a <colgroup> element
+<thead>	Groups the header content in a table
+<tbody>	Groups the body content in a table
+<tfoot>	Groups the footer content in a table
+
+
+Tags de tabela HTML
+Tag Descrição
+<table> Define uma tabela
+<th> Define uma célula de cabeçalho em uma tabela
+<tr> Define uma linha em uma tabela
+<td> Define uma célula em uma tabela
+<caption> Define uma legenda para a tabela
+<colgroup> Especifica um grupo de uma ou mais colunas em uma tabela para formatação
+<col> Especifica as propriedades de coluna para cada coluna dentro de um elemento <colgroup>
+<thead> Agrupa o conteúdo do cabeçalho em uma tabela
+<tbody> Agrupa o conteúdo do corpo em uma tabela
+<tfoot> Agrupa o conteúdo do rodapé em uma tabela
+
+
+mesa pontilhadas
+Com essa border-stylepropriedade, você pode definir a aparência da borda.
+
+ 	 	 
+ 	 	 
+ 	 	 
+Os seguintes valores são permitidos:
+
+dotted     
+dashed     
+solid     
+double     
+groove     
+ridge     
+inset     
+outset     
+none     
+hidden     
+
+Uma tabela interativa com destaque ao passar o mouse usa o pseudo-seletor :hover no CSS aplicado às linhas da tabela (tr).
+A lógica é simples:
+
+tr:hover → quando o cursor passa sobre uma linha da tabela.
+
+você altera o estilo dessa linha (ex: background-color).
+
+No seu código você já tem quase toda a estrutura, só falta adicionar o seletor. 
+
+
+O <colgroup>elemento deve ser usado como um contêiner para as especificações da coluna.
+
+Cada grupo é especificado com um <col>elemento.
+
+O spanatributo especifica quantas colunas receberão o estilo.
+
+O styleatributo especifica o estilo a ser atribuído às colunas. 
+
+
+<span> é uma tag HTML usada para envolver texto ou pequenas partes de conteúdo.
+Ela não muda o layout por padrão; serve principalmente para aplicar estilos ou manipular algo com CSS ou JavaScript.
+
+No seu caso
+
+Você não criou manualmente, mas seu JavaScript já cria um <span> automaticamente nesta linha:
+
+divTarefa.innerHTML = `
+    <span>${tarefa.texto}</span>
+    <button onclick="marcarFeito(${index})">Feito</button>
+    <button onclick="cancelarTarefa(${index})">Cancelar</button>
+`;
+
+
+
+A floatpropriedade CSS não foi originalmente concebida para alinhar <div>elementos lado a lado, mas tem sido usada para esse propósito há muitos anos.
+
+A floatpropriedade CSS é usada para posicionar e formatar conteúdo e permite que os elementos sejam posicionados horizontalmente, em vez de verticalmente.
+
+Exemplo
+Como usar o float para alinhar elementos div lado a lado:
+
+<style>
+.mycontainer {
+  width:100%;
+  overflow:auto;
+}
+.mycontainer div {
+  width:33%;
+  float:left;
+}
+</style>
+

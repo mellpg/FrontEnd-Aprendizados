@@ -1,0 +1,70 @@
+Borda css
+
+A borderpropriedade CSS define uma borda ao redor de um elemento HTML.
+
+Dica: Você pode definir uma borda para quase todos os elementos HTML.
+
+Preenchimento CSS
+A paddingpropriedade CSS define um preenchimento (espaço) entre o texto e a borda.
+
+Margem CSS
+A propriedade CSS margindefine uma margem (espaço) fora
+ da borda.
+
+
+Link externo:
+
+Link para CSS externo
+Folhas de estilo externas podem ser referenciadas com um URL completo ou com um caminho relativo à página web atual.
+
+Exemplo
+Este exemplo usa um URL completo para criar um link para uma folha de estilo:
+
+<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+
+Exemplo
+Este exemplo direciona para uma folha de estilo localizada na pasta html do site atual: 
+
+<link rel="stylesheet" href="/html/styles.css">
+
+Exemplo
+Este exemplo direciona para uma folha de estilo localizada na mesma pasta que a página atual:
+
+<link rel="stylesheet" href="styles.css">
+
+
+Resumo do Capítulo
+Use o styleatributo HTML para estilização embutida.
+Utilize o elemento HTML <style>para definir CSS interno.
+Utilize o <link>elemento HTML para fazer referência a um arquivo CSS externo.
+Utilize o <head>elemento HTML para armazenar elementos <style> e <link>
+Use a colorpropriedade CSS para cores de texto.
+Use a font-familypropriedade CSS para fontes de texto.
+Use a font-sizepropriedade CSS para definir o tamanho do texto.
+Use a borderpropriedade CSS para bordas.
+Use a paddingpropriedade CSS para definir o espaço dentro da borda.
+Use a marginpropriedade CSS para definir o espaço externo à borda.
+
+Esse comando CSS img:hover { transform: scale(1.1); } cria um efeito de "zoom" suave (aumento de tamanho) em todas as imagens (<img>) de uma página quando o usuário passa o cursor do mouse sobre elas. 
+Reddit
+Reddit
+ +1
+Aqui está a explicação detalhada:
+img:hover: É um seletor pseudo-classe que detecta quando o usuário coloca o ponteiro do mouse sobre um elemento <img>.
+transform: scale(1.1);: Esta propriedade aplica uma transformação de escala ao elemento. O valor 1.1 significa que a imagem aumentará para 110% do seu tamanho original (um aumento de 10%). 
+MDN Web Docs
+MDN Web Docs
+ +3
+Como melhorar esse comando?
+Por padrão, o aumento é instantâneo e pode parecer brusco. Para tornar o efeito mais profissional e suave, recomenda-se adicionar uma transição no elemento original: 
+Blog da Trybe
+Blog da Trybe
+ +1
+css
+img {
+  transition: transform 0.3s ease; /* Adiciona suavidade */
+}
+
+img:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
